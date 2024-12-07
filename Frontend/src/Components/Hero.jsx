@@ -7,8 +7,13 @@ const Hero = () => {
       {/* Left Side */}
       <div className="hero-left">
         <h1 className="hero-heading">
-          Transform Your Business with Cloud Solutions
+          Custom Solutions to Streamline Your Business
         </h1>
+        <h2 className="head">
+          <span className="span span1">Simplify</span>
+          <span className="span span2">Optimize</span>
+          <span className="span span3">Transform</span>
+        </h2>
         <p className="hero-description">
           Discover innovative cloud-based management systems tailored for
           various industries . Streamline your operations and enhance

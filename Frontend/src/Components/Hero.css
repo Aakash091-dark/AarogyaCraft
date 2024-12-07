@@ -1,13 +1,128 @@
 /* Hero container styling */
+.span {
+    display: inline-block;
+    overflow: hidden; /* Ensure content stays inside during animation */
+    position: relative;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-100%); /* Start from outside the view */
+    animation: openUp 4.5s ease-in-out infinite; /* Infinite looping animation */
+  }
+  
+  /* Specific animation delays for each span */
+  .span1 {
+    animation-delay: 0s; /* Simplify starts immediately */
+  }
+  
+  .span2 {
+    animation-delay: 1.5s; /* Optimize starts after 1.5 seconds */
+  }
+  
+  .span3 {
+    animation-delay: 3s; /* Transform starts after 3 seconds */
+  }
+  
+  /* Colors and font adjustments */
+  .span1 {
+    color: rgb(255, 111, 0);
+    font-weight: 700;
+    font-size: 3rem;
+  }
+  
+  .span2 {
+    color: rgb(1, 143, 245);
+    font-weight: 600;
+    font-size: 2.5rem;
+  }
+  
+  .span3 {
+    color: green;
+    font-weight: 500;
+    font-size: 2rem;
+  }
+  
+  /* Open-up animation */
+  @keyframes openUp {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%); /* Start off-screen to the left */
+    }
+    20% {
+      opacity: 1;
+      transform: translateX(0); /* Fully visible and settled */
+    }
+    80% {
+      opacity: 1;
+      transform: translateX(0); /* Remains visible */
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(100%); /* Exit off-screen to the right */
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .hero-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    margin-top: 3rem;
+    /* margin-top: 0.5rem; */
     margin-left: 4rem;
     gap: 2rem;
+}
+
+.hero-heading{
+    font-size: 3em;
+    font-weight: ;
+}
+
+.span1{
+    color: rgb(255, 111, 0);
+    font-weight: 700;
+    font-size: 3rem;
+}
+.span2{
+    color: rgb(1, 143, 245);
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+.span3{
+    color: green;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+
+.para{
+    color: #007bff;
 }
 
 /* For larger screens, display as two columns */
