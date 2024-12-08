@@ -1,24 +1,36 @@
 
-
-
-
   .simplify {
-    color: #ff4500; /* Red-Orange color for 'Simplify' */
+    color: #007bff; /* Red-Orange color for 'Simplify' */
     font-weight: bold;
-    font-size: 4rem; /* Adjust the size as needed */
+    font-size: 3rem; /* Adjust the size as needed */
   }
   
   .optimize {
-    color: #1e90ff; /* Light Blue color for 'Optimize' */
+    color: #007bff; /* Light Blue color for 'Optimize' */
     font-weight: bold;
-    font-size: 4rem; /* Adjust the size as needed */
+    font-size: 3rem; /* Adjust the size as needed */
   }
   
   .transform {
-    color: green; /* Green color for 'Transform' */
+    color: #007bff; /* Green color for 'Transform' */
     font-weight: bold;
-    font-size: 4rem; /* Adjust the size as needed */
+    font-size: 3rem; /* Adjust the size as needed */
   }
+
+
+  .hero-description{
+    text-align: left;
+  }
+
+
+  .kaif{
+    width: 100%;
+    height: 3rem;
+}
+
+  
+
+  
 
 
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 
+
 const Navbar = () => {
   const [showIndustriesDropdown, setShowIndustriesDropdown] = useState(false);
   const [showLanguagesDropdown, setShowLanguagesDropdown] = useState(false);
@@ -20,7 +21,8 @@ const Navbar = () => {
     <nav className="navbar">
       {/* Logo */}
       <div className="logo">
-        <img src="src/assets/images/logoo.jpg" alt="ArogyaTantra Logo" />
+        {/* <img src="src/assets/images/logoo.jpg" alt="ArogyaTantra Logo" /> */}
+        AarogyaCraft
       </div>
 
       {/* Hamburger Icon */}
@@ -31,7 +33,7 @@ const Navbar = () => {
       {/* Nav Links */}
       <ul className={`nav-links ${menuOpen ? "show" : ""}`}>
         <li>
-          <a href="#home">Home</a>
+          <a href="/">Home</a>
         </li>
         <li>
           <a href="#services">Our Services</a>
@@ -57,7 +59,7 @@ const Navbar = () => {
         </li>
 
         <li>
-          <a href="#contact">Contact Us</a>
+          <a href="/Contact.jsx">Contact Us</a>
         </li>
 
         {/* Languages Dropdown */}
@@ -88,3 +90,9 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
+
+

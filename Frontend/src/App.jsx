@@ -1,6 +1,6 @@
 import Navbar from "./Components/Navbar"
-import Hero from "./Components/Hero"
 import LandingPage from "./Components/landingpage"
+import Contact from "./Components/Contact"
 
 function App() {
   return (
@@ -11,3 +11,7 @@ function App() {
   )
 }
 export default App
+
+
+
+

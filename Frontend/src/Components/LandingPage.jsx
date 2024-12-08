@@ -106,38 +106,6 @@
 
 // export default LandingPage;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Hero from "./Hero";
@@ -152,6 +120,7 @@ const LandingPage = () => {
           <Route path="/" element={<Home />} />
           <Route path="/custom" element={<Custom />} />
           <Route path="/prebuilt" element={<Prebuilt />} />
+
         </Routes>
       </div>
     </Router>
@@ -169,16 +138,16 @@ const Home = () => (
     <div className="solutions">
       <h1>
         <span>Tailored Management Systems</span>
-        <span className="line2">for Every Industry</span>
+        {/* <span className="line2">for Every Industry</span> */}
       </h1>
       <p>
-        <span>
+        <span><b>
           Discover our innovative management systems designed to streamline
-          operations across various
+          operations across various.</b>
         </span>
-        <span>
+        <span><b>
           sectors. Whether you need a custom solution or a pre-built option, we
-          have you covered.
+          have you covered.</b>
         </span>
       </p>
 
@@ -187,21 +156,82 @@ const Home = () => (
         <div className="feature">
           <h2>Custom Solutions Tailored to Your Needs</h2>
           <p>
-            Our custom solutions are crafted to meet the unique requirements of
-            your industry.
+            <ul>
+              <li>
+                <strong>Tailored Solutions:</strong> Custom-built systems to
+                address your specific business needs.
+              </li>
+              <li>
+                <strong>Workflow Optimization:</strong> Simplify operations and
+                eliminate inefficiencies.
+              </li>
+              <li>
+                <strong>Enhanced Productivity:</strong> Boost output with
+                innovative, user-friendly tools.
+              </li>
+              <li>
+                <strong>Scalable Design:</strong> Solutions that grow with your
+                business.
+              </li>
+              <li>
+                <strong>Cost Efficiency:</strong> Save time and resources with
+                automation.
+              </li>
+            </ul>
           </p>
         </div>
         <div className="feature">
           <h2>Pre-built Solutions for Quick Implementation</h2>
           <p>
-            Choose from our pre-built systems for fast deployment and ease of
-            use.
+            <ul>
+              <li>
+                <strong>Ready-to-Use Modules:</strong> Pre-designed solutions
+                for rapid deployment.
+              </li>
+              <li>
+                <strong>Quick Setup:</strong> Save time with hassle-free
+                implementation.
+              </li>
+              <li>
+                <strong>Cost-Effective:</strong> Affordable solutions without
+                compromising quality.
+              </li>
+              <li>
+                <strong>Scalable Design:</strong> Easily expandable as your
+                business grows.
+              </li>
+              <li>
+                <strong>Industry-Specific:</strong> Tailored for diverse sectors
+                and needs.
+              </li>
+            </ul>
           </p>
         </div>
         <div className="feature">
           <h2>Explore Our Diverse Industry Offerings</h2>
           <p>
-            We cater to various industries, ensuring tailored functionality.
+            <ul>
+              <li>
+                <strong>Healthcare Solutions:</strong> Streamlined management
+                for hospitals and clinics.
+              </li>
+              <li>
+                <strong>Education Systems:</strong> Enhanced tools for schools
+                and universities.
+              </li>
+              <li>
+                <strong>Retail Platforms:</strong> Efficient inventory and sales
+                tracking.
+              </li>
+              <li>
+                <strong>Manufacturing Tools:</strong> Simplified production and
+                supply chain management.
+              </li>
+              <li>
+                <strong>Finance Services:</strong> Secure and automated
+                processes.
+              </li>
+            </ul>
           </p>
         </div>
       </div>
