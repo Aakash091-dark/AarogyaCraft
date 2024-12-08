@@ -1,12 +1,12 @@
 
   .simplify {
-    color: #007bff; /* Red-Orange color for 'Simplify' */
+    color: green; /* Red-Orange color for 'Simplify' */
     font-weight: bold;
     font-size: 3rem; /* Adjust the size as needed */
   }
   
   .optimize {
-    color: #007bff; /* Light Blue color for 'Optimize' */
+    color: red; /* Light Blue color for 'Optimize' */
     font-weight: bold;
     font-size: 3rem; /* Adjust the size as needed */
   }
