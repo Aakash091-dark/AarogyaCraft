@@ -12,7 +12,7 @@
   }
   
   .transform {
-    color: #007bff; /* Green color for 'Transform' */
+    color: black; /* Green color for 'Transform' */
     font-weight: bold;
     font-size: 3rem; /* Adjust the size as needed */
   }
