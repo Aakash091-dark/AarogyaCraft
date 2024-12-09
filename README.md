@@ -1,7 +1,7 @@
 
-# AarogyaCraft - A fully customized Management Platform 📊
+# AarogyaCraft 📊
 
-Welcome to the AarogyaCraft - A Complete Managemnt System Solution ! This repository is a monorepo containing full stack AI powered  management system. Follow this guide to understand the structure, setup, and development workflow.
+Welcome to the AarogyaCraft - A Complete Management System Solution ! This repository is a monorepo containing full stack AI powered  management system. Follow this guide to understand the structure, setup, and development workflow.
 ---
 
 ## 📁 Project Overview ##
