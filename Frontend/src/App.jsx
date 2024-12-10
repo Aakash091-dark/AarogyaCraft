@@ -1,5 +1,5 @@
 import Navbar from "./Components/Navbar"
-import LandingPage from "./Components/landingpage"
+import LandingPage from "./Components/LandingPage"
 import Contact from "./Pages/Contact"
 import Footer from "./Components/Footer"
 
