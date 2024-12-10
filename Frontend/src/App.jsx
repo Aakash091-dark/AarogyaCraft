@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar";
 import LandingPage from "./Components/LandingPage";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
+// import AboutUs from "./Pages/AboutUs";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
 
         {/* <Route path="/" element={<LandingPage />} /> */}
         <Route path="/contact" element={<Contact />} />
+        {/* <Route path="/aboutus" element={<AboutUs />} /> */}
       </Routes>
       <Footer />
     </Router>
