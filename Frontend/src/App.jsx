@@ -1,30 +1,17 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./Components/Navbar";
-import LandingPage from "./Components/LandingPage";
-import Contact from "./Components/Contact";
-import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar"
+import LandingPage from "./Components/landingpage"
+import Contact from "./Components/Contact"
 
-const App = () => {
+function App() {
   return (
-    <Router>
-      <Navbar />
+    <>
+    <Navbar/>
+    <LandingPage/>
+    </>
+  )
+}
+export default App
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <LandingPage />
-            </>
-          }
-        />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer />
 
-    </Router>
-    
-  );
-};
-export default App;
+
+

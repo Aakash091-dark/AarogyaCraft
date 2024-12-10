@@ -157,7 +157,11 @@ const Navbar = () => {
         </li>
 
         <li>
+<<<<<<< HEAD
           <Link to="/contact">Contact Us</Link>
+=======
+          <a href="/Contact">Contact Us</a>
+>>>>>>> e41a2bfa34bbcee54e4f0088428f936f49975242
         </li>
 
         {/* Languages Dropdown */}
