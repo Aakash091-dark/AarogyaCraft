@@ -2,7 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Hero from "./Hero";
 import "./LandingPage.css"; // Ensure this file includes the relevant CSS
-<<<<<<< HEAD
+// import CustomButtons from "../Pages/CustomButton";
+// import PrebuiltButtons from "../Pages/PrebuiltButton";
 import PrebuiltButtons from "./PrebuiltButtons";
 import CustomButtons from "./CustomButtons";
 
@@ -18,7 +19,6 @@ const LandingPage = () => {
         <Route path="/Prebuilt" element={<Prebuilt />} />
       </Routes>
     </div>
-=======
 import CustomButtons from "../Pages/CustomButton";
 import PrebuiltButtons from "../Pages/PrebuiltButton";
 
@@ -29,8 +29,8 @@ const LandingPage = () => {
         {/* Main Content */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/custom" element={<CustomButtons />} />
-          <Route path="/prebuilt" element={<PrebuiltButtons />} />
+          {/* <Route path="/custom" element={<CustomButtons />} />
+          <Route path="/prebuilt" element={<PrebuiltButtons />} /> */}
           {/* <Route path="/" element={<Custom />} />
           <Route path="/" element={<Prebuilt />} /> */}
 
@@ -38,7 +38,6 @@ const LandingPage = () => {
         </Routes>
       </div>
     </Router>
->>>>>>> e41a2bfa34bbcee54e4f0088428f936f49975242
   );
 };
 
@@ -161,7 +160,6 @@ const Home = () => (
     </div>
   </div>
 );
-<<<<<<< HEAD
 const Custom = () => (
   <div className="page">
     <h1>Custom Solutions</h1>
@@ -183,7 +181,6 @@ const Prebuilt = () => (
     </Link>
   </div>
 );
-=======
 
 // const Custom = () => (
 //   <div className="page">
@@ -206,7 +203,6 @@ const Prebuilt = () => (
 //     </Link>
 //   </div>
 // );
->>>>>>> e41a2bfa34bbcee54e4f0088428f936f49975242
 
 export default LandingPage;
 
