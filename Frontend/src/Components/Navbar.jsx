@@ -59,7 +59,7 @@ const Navbar = () => {
         </li>
 
         <li>
-          <a href="/Contact.jsx">Contact Us</a>
+          <a href="/Contact">Contact Us</a>
         </li>
 
         {/* Languages Dropdown */}
