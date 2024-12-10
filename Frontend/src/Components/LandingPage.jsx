@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Hero from "./Hero";
 import "./LandingPage.css"; // Ensure this file includes the relevant CSS
-import CustomButtons from "../Pages/CustomButton";
-import PrebuiltButtons from "../Pages/PrebuiltButton";
+// import CustomButtons from "../Pages/CustomButton";
+// import PrebuiltButtons from "../Pages/PrebuiltButton";
 
 const LandingPage = () => {
   return (
@@ -12,8 +12,8 @@ const LandingPage = () => {
         {/* Main Content */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/custom" element={<CustomButtons />} />
-          <Route path="/prebuilt" element={<PrebuiltButtons />} />
+          {/* <Route path="/custom" element={<CustomButtons />} />
+          <Route path="/prebuilt" element={<PrebuiltButtons />} /> */}
           {/* <Route path="/" element={<Custom />} />
           <Route path="/" element={<Prebuilt />} /> */}
 
