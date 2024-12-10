@@ -1,9 +1,26 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Hero from "./Hero";
 import "./LandingPage.css"; // Ensure this file includes the relevant CSS
 // import CustomButtons from "../Pages/CustomButton";
 // import PrebuiltButtons from "../Pages/PrebuiltButton";
+import PrebuiltButtons from "./PrebuiltButtons";
+import CustomButtons from "./CustomButtons";
+
+const LandingPage = () => {
+  return (
+    <div className="landing-page">
+      {/* Main Content */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/custom" element={<CustomButtons/>} />
+        <Route path="/prebuilt" element={<PrebuiltButtons />} />
+        <Route path="/Custom" element={<Custom />} />
+        <Route path="/Prebuilt" element={<Prebuilt />} />
+      </Routes>
+    </div>
+import CustomButtons from "../Pages/CustomButton";
+import PrebuiltButtons from "../Pages/PrebuiltButton";
 
 const LandingPage = () => {
   return (
@@ -31,7 +48,7 @@ const Home = () => (
       <Hero />
     </div>
 
-    {/* Solutions Section */}
+
     <div className="solutions">
       <h1>
         <span>Tailored Management Systems</span>
@@ -47,11 +64,10 @@ const Home = () => (
           have you covered.</b>
         </span>
       </p>
-
-      {/* Features Section */}
-      <div className="features">
-        <div className="feature">
-          <h2>Custom Solutions Tailored to Your Needs</h2>
+      {/* Features Section */} 
+          <div className="features">
+       <div className="feature">
+        <h2>Custom Solutions Tailored to Your Needs</h2>
           <p>
             <ul>
               <li>
@@ -144,6 +160,27 @@ const Home = () => (
     </div>
   </div>
 );
+const Custom = () => (
+  <div className="page">
+    <h1>Custom Solutions</h1>
+    <p>
+      Here you can explore custom solutions tailored to your industry needs.
+    </p>
+    <Link to="/" className="buttons">
+      Back to Home
+    </Link>
+  </div>
+);
+
+const Prebuilt = () => (
+  <div className="page">
+    <h1>Pre-built Solutions</h1>
+    <p>Here you can explore pre-built solutions for quick deployment.</p>
+    <Link to="/" className="buttons">
+      Back to Home
+    </Link>
+  </div>
+);
 
 // const Custom = () => (
 //   <div className="page">
@@ -168,3 +205,4 @@ const Home = () => (
 // );
 
 export default LandingPage;
+

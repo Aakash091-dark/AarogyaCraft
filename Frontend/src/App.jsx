@@ -1,7 +1,6 @@
 import Navbar from "./Components/Navbar"
-import LandingPage from "./Components/LandingPage"
-import Contact from "./Pages/Contact"
-import Footer from "./Components/Footer"
+import LandingPage from "./Components/landingpage"
+import Contact from "./Components/Contact"
 
 function App() {
   return (
