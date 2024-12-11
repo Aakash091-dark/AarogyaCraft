@@ -1,43 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Hero from "./Hero";
-import "./LandingPage.css"; // Ensure this file includes the relevant CSS
-// import CustomButtons from "../Pages/CustomButton";
-// import PrebuiltButtons from "../Pages/PrebuiltButton";
 import PrebuiltButtons from "./PrebuiltButtons";
 import CustomButtons from "./CustomButtons";
+import "./LandingPage.css"; // Ensure this file includes the relevant CSS
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
       {/* Main Content */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/custom" element={<CustomButtons/>} />
-        <Route path="/prebuilt" element={<PrebuiltButtons />} />
-        <Route path="/Custom" element={<Custom />} />
-        <Route path="/Prebuilt" element={<Prebuilt />} />
+      <Route path="/" element={<Home />} />
+          <Route path="/custom" element={<CustomPage />} />
+          <Route path="/prebuilt" element={<PrebuiltPage />} />
       </Routes>
     </div>
-import CustomButtons from "../Pages/CustomButton";
-import PrebuiltButtons from "../Pages/PrebuiltButton";
-
-const LandingPage = () => {
-  return (
-    <Router>
-      <div className="landing-page">
-        {/* Main Content */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/custom" element={<CustomButtons />} />
-          <Route path="/prebuilt" element={<PrebuiltButtons />} /> */}
-          {/* <Route path="/" element={<Custom />} />
-          <Route path="/" element={<Prebuilt />} /> */}
-
-
-        </Routes>
-      </div>
-    </Router>
   );
 };
 
@@ -160,15 +137,27 @@ const Home = () => (
     </div>
   </div>
 );
+const CustomPage = () => (
+  <div>
+    <Custom />
+  </div>
+);
+
+const PrebuiltPage = () => (
+  <div>
+    <Prebuilt />
+  </div>
+);
+
 const Custom = () => (
   <div className="page">
     <h1>Custom Solutions</h1>
     <p>
       Here you can explore custom solutions tailored to your industry needs.
     </p>
-    <Link to="/" className="buttons">
+    {/* <Link to="/" className="btn">
       Back to Home
-    </Link>
+    </Link> */}
   </div>
 );
 
@@ -176,33 +165,10 @@ const Prebuilt = () => (
   <div className="page">
     <h1>Pre-built Solutions</h1>
     <p>Here you can explore pre-built solutions for quick deployment.</p>
-    <Link to="/" className="buttons">
+    {/* <Link to="/" className="btn">
       Back to Home
-    </Link>
+    </Link> */}
   </div>
 );
 
-// const Custom = () => (
-//   <div className="page">
-//     <h1>Custom Solutions</h1>
-//     <p>
-//       Here you can explore custom solutions tailored to your industry needs.
-//     </p>
-//     <Link to="/" className="btn">
-//       Back to Home
-//     </Link>
-//   </div>
-// );
-
-// const Prebuilt = () => (
-//   <div className="page">
-//     <h1>Pre-built Solutions</h1>
-//     <p>Here you can explore pre-built solutions for quick deployment.</p>
-//     <Link to="/" className="btn">
-//       Back to Home
-//     </Link>
-//   </div>
-// );
-
 export default LandingPage;
-

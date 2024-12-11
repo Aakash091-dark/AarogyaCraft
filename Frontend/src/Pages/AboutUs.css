@@ -1,0 +1,104 @@
+
+.about-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7fc;
+  }
+  
+  .about-us-intro, .who-we-are, .mission, .vision, .why-choose-us, .our-journey {
+    margin-bottom: 40px;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-top: 30px;
+    border-bottom: 2px solid #0073e6;
+    padding-bottom: 10px;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  ul li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+  
+  ul li strong {
+    color: #0073e6;
+    font-weight: bold;
+  }
+  
+  .about-us-intro, .who-we-are, .mission, .vision, .why-choose-us, .our-journey {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mission ul, .vision ul {
+    padding-left: 20px;
+  }
+  
+  .why-choose-us ul {
+    padding-left: 20px;
+    border-left: 4px solid #0073e6;
+    margin-left: 20px;
+  }
+  
+  .our-journey p {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.8;
+  }
+  
+
+
+
+
+
+
+
+
+
+  @media (max-width: 768px) {
+    .about-us-container {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.6rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  
+    ul li {
+      font-size: 1rem;
+    }
+  }
+  
