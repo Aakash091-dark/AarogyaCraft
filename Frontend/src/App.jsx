@@ -10,6 +10,14 @@ import Industries from "./Components/Industries";
 
 function App() {
   return (
+
+    <>
+    <Navbar/>
+    <LandingPage/>
+    <Footer/>
+    </>
+  )
+
     <Router>
       <Navbar />
       <LandingPage/>
