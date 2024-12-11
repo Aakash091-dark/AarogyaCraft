@@ -4,7 +4,7 @@ import Navbar from "./Components/Navbar";
 import LandingPage from "./Components/LandingPage";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
-
+import OurServices from '../../Pages/OurServices';
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
 
         {/* <Route path="/" element={<LandingPage />} /> */}
         <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<OurServices />} />
       </Routes>
       <Footer />
     </Router>
