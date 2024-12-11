@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Hero from "./Hero";
+import Industries from "./Industries";
 import PrebuiltButtons from "./PrebuiltButtons";
 import CustomButtons from "./CustomButtons";
 import "./LandingPage.css"; // Ensure this file includes the relevant CSS
@@ -23,6 +24,7 @@ const Home = () => (
     {/* Hero Section */}
     <div className="hero">
       <Hero />
+      <Industries />
     </div>
 
 

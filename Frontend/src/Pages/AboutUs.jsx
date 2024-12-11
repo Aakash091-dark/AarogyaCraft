@@ -12,7 +12,7 @@ const AboutUs = () => {
       <div className="about-us-card">
         <h2>About Us</h2>
         <p>
-          At [Your Company Name], we are revolutionizing how businesses embrace cloud technology. Since our founding in [Year of Establishment], we have been committed to empowering organizations with innovative, secure, and scalable solutions that align with their unique goals and industry challenges.
+          At AarogyaCraft, we are revolutionizing how businesses embrace cloud technology. Since our founding in 2024, we have been committed to empowering organizations with innovative, secure, and scalable solutions that align with their unique goals and industry challenges.
         </p>
       </div>
 
@@ -52,7 +52,7 @@ const AboutUs = () => {
       <div className="about-us-card">
         <h2>Our Journey So Far</h2>
         <p>
-          At [Your Company Name], our story is just beginning, but our ambitions are limitless.
+          At AarogyaCraft, our story is just beginning, but our ambitions are limitless.
         </p>
       </div>
     </div>

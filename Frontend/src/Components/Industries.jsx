@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 const Industries = () => {
     const cardsData = [
         { title: "Industry 1", description: "Description for Industry 1" },
-        { title: "Industry 2", description: "Description for Industry 2" },
+        { title: "HealthCare", description: "The healthcare industry is dedicated to improving and sustaining human health through medical services." },
         { title: "Industry 3", description: "Description for Industry 3" },
         { title: "Industry 4", description: "Description for Industry 4" },
         { title: "Industry 5", description: "Description for Industry 5" },
