@@ -1,0 +1,44 @@
+/* General Card Styling */
+.card {
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    border: 1px solid lightgrey; /* Light grey border */
+    border-radius: 15px; /* Initial rounded corners */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease; /* Smooth hover effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: scale(1.05); /* Pop-up effect */
+    border-radius: 0; /* Remove rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+}
+
+/* Card Title */
+.card-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+}
+
+/* Card Description */
+.card-description {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .card {
+        width: 90%; /* Make it fit smaller screens */
+        height: auto;
+    }
+}

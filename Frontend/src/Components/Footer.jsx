@@ -1,5 +1,8 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import AboutUs from "../Pages/AboutUs";
 
 const Footer = () => {
   return (
@@ -10,7 +13,9 @@ const Footer = () => {
           <nav className="nav-links">
             <a href="#">Get Started</a>
             <a href="#">Contact Us</a>
-            <a href="#">About Us</a>
+            <li>
+          <Link to="/AboutUs">AboutUs</Link>
+        </li>
             <a href="#">Support Center</a>
             <a href="#">Blog Posts</a>
           </nav>
