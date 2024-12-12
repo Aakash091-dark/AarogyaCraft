@@ -15,7 +15,7 @@ const OurServices = () => {
         With a focus on flexibility and industry-specific needs,we offer two comprehensive service categories designed to meet diverse business requirements:
          </span>
       </p>
-      <div className="cards-container">
+      <div className="CardS-container">
         <div className="card1">
           <h2>Custom Cloud Solutions</h2>
           <p>
@@ -32,7 +32,7 @@ const OurServices = () => {
             </li>
           </ul>
         </div>
-        <div className="card">
+        <div className="CARD">
           <h2>Prebuilt Industry Solutions</h2>
           <p>
             For businesses seeking a ready-to-deploy cloud platform, our Prebuilt Industry Solutions are tailored to specific sectors such as:

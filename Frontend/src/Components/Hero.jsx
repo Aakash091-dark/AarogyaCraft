@@ -41,8 +41,8 @@ const Hero = () => {
             <span ref={typedElement}></span> {/* The typed text will appear here */}
         </div>
         </h2>
-        <p className="hero-description"><b>
-        AarogyaCraft offers intuitive, cloud-based management systems tailored for various industries. From customizable solutions to pre-built modules, we simplify operations, optimize processes, and transform productivity—empowering businesses to save time, reduce costs, and achieve growth seamlessly.</b>
+        <p className="hero-description">
+          <b>AarogyaCraft offers intuitive, cloud-based management systems tailored for various industries. From customizable solutions to pre-built modules, we simplify operations, optimize processes, and transform productivity—empowering businesses to save time, reduce costs, and achieve growth seamlessly.</b>
         </p>
       </div>
 

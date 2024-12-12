@@ -8,7 +8,7 @@
 }
 
 /* Cards Container */
-.cards-container {
+.CardS-container {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -17,7 +17,7 @@
 }
 
 /* Individual Card */
-.card, .card1 {
+.CARD, .card1 {
     background: linear-gradient(135deg, #e0f7fa, #ffffff);
     padding: 15px;
     border-radius: 15px;
@@ -31,7 +31,7 @@
 }
 
 /* Card Animation */
-.card::before, .card1::before {
+.CARD::before, .card1::before {
     content: "";
     position: absolute;
     top: 0;
@@ -44,7 +44,7 @@
     z-index: 0;
 }
 
-.card:hover::before {
+.CARD:hover::before {
     transform: scale(1);
 }
 
@@ -53,7 +53,7 @@
 }
 
 /* Hover Effects */
-.card:hover {
+.CARD:hover {
     transform: translateY(-10px) scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     background: linear-gradient(135deg, #ffffff, #e3f2fd);
@@ -66,7 +66,7 @@
 }
 
 /* Card Title */
-.card h2, .card1 h2 {
+.CARD h2, .card1 h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
     color: #333;
@@ -76,7 +76,7 @@
     transition: color 0.3s ease;
 }
 
-.card:hover h2 {
+.CARD:hover h2 {
     color: #007bff;
 }
 
@@ -85,7 +85,7 @@
 }
 
 /* Card Text */
-.card p, .card1 p {
+.CARD p, .card1 p {
     font-size: 0.9em;
     color: #555;
     line-height: 1.5;
@@ -95,7 +95,7 @@
 }
 
 /* Card List */
-.card ul, .card1 ul {
+.CARD ul, .card1 ul {
     color: #333;
     margin: 15px 0;
     padding-left: 20px;
@@ -108,7 +108,7 @@
 }
 
 /* Expand List on Hover */
-.card:hover ul {
+.CARD:hover ul {
     max-height: 500px; /* Adjust to fit content */
 }
 
@@ -117,7 +117,7 @@
 }
 
 /* List Item Animation */
-.card ul li, .card1 ul li {
+.CARD ul li, .card1 ul li {
     opacity: 0;
     transform: translateX(-10px);
     animation: fadeIn 0.5s ease forwards;

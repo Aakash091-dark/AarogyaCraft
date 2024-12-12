@@ -1,40 +1,75 @@
-/* Carousel Container */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Container for the entire industries section */
 .card-container {
-    width: 90%;
-    margin: 0 auto;
-    padding: 1rem 4.5rem 5rem 4.5rem;
     text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Heading for the industries section */
 .container-heading {
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    color: #333;
+    /* display: flex; */
+    font-size: 3rem;
+    font-weight: 600;
+    color: #0073e6;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+
 }
 
 /* Carousel Wrapper */
 .carousel-wrapper {
     width: 100%;
-    overflow: hidden; /* Hide the cards that are outside the visible area */
+    /* overflow: hidden; */
     position: relative;
+    align-items: center;
+    padding-bottom: 2rem;
 }
 
-/* Carousel Inner Container */
-.carousel-inner {
-    display: flex;
-    transition: transform 1s ease-in-out; /* Smooth transition for sliding */
+/* Slick Carousel Dots Styling */
+.slick-dots li button:before {
+    font-size: 12px;
+    color: #0073e6;
 }
 
-/* Individual Card */
-.carousel-card {
-    flex: 0 0 20%; /* Each card takes 20% of the carousel width */
-    margin: 0 10px; /* Add some spacing between cards */
+.slick-dots li.slick-active button:before {
+    color: #0073e6;
 }
 
-/* Optional: Apply a box shadow or other styling to cards */
-.carousel-card > div {
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
+/* Custom arrow styles (optional if you use carousel arrows) */
+.slick-prev:before, .slick-next:before {
+    color: #0073e6;
+    font-size: 30px;
+}
+
+/* Individual Card (inside the carousel) */
+.slick-slide > div {
+    padding: 0 30px; /* Increased padding for horizontal spacing between cards */
+    height: 100%;
+}
+
+/* Responsive design for carousel */
+@media (max-width: 768px) {
+    .container-heading {
+        font-size: 2rem;
+    }
+
+    .slick-slide > div {
+        padding: 0 15px; /* Smaller padding for mobile view */
+    }
+}
+
+/* Last paragraph styling */
+.last_para {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #0073e6;
+    font-family: 'Poppins', sans-serif;
 }
