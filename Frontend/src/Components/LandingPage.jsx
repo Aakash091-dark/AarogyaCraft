@@ -43,7 +43,7 @@ const Home = () => (
           have you covered.</b>
         </span>
       </p>
-      {/* Features Section */} 
+      {/* Features Section */}  
           <div className="features">
        <div className="feature">
         <h2>Custom Solutions Tailored to Your Needs</h2>
