@@ -90,12 +90,24 @@ import FinanceImage from '../assets/images/finance.png';
 
 const Industries = () => {
     const cardsData = [
+ 
         { title: "Technology", imageUrl: techImage },
         { title: "HealthCare", imageUrl: healthImage },
         { title: "Banking", imageUrl: BankingImage },
         { title: "Education", imageUrl: EduImage },
         { title: "Finance", imageUrl: FinanceImage },
+
+        { title: "Industry 1", description: "Description for Industry 1" },
+        { title: "HealthCare", description: 
+          "   jlsadkjllskad kjsladjklsadkjlThe healthcare industry is dedicated to improving and sustaining human health through medical services." },
+        { title: "Industry 3", description: "Description for Industry 3" },
+        { title: "Industry 4", description: "Description for Industry 4" },
+        { title: "Industry 5", description: "Description for Industry 5" },
+
     ];
+
+
+//  this is the settings for the slider whuse the react-slick library 
 
     const settings = {
         dots: true,
