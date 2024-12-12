@@ -38,6 +38,7 @@
 .solutions {
   margin-top: 50px;
 
+}
 .feature:hover h2 {
   color: #007bff;
 
@@ -200,12 +201,6 @@ body {
       width: 90%;
 
     }
-  } 
-
-
-
-  
-
   }
-}
+
 
