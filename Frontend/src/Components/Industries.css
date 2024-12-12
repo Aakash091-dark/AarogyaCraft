@@ -17,7 +17,6 @@
     color: #0073e6;
     margin-bottom: 30px;
     letter-spacing: 1px;
-    text-transform: uppercase;
     justify-content: center;
     align-items: center;
 
@@ -73,3 +72,14 @@
     color: #0073e6;
     font-family: 'Poppins', sans-serif;
 }
+
+
+.industry-image {
+    width: 200px; /* Set appropriate size */
+    height: auto;
+    margin-top: 10px; /* Space between title and image */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+

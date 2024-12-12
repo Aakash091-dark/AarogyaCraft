@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 body {
     font-family: Arial, sans-serif;
@@ -10,7 +10,6 @@ body {
 }
 
 
-/* Adding margin-top to the solutions section */
 .solutions {
   margin-top: 50px;
 }
@@ -141,4 +140,8 @@ body {
     .feature {
       width: 90%;
     }
-  }
+  } 
+
+
+
+  
