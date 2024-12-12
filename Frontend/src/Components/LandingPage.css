@@ -1,3 +1,6 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 .feature {
   background: linear-gradient(135deg, #e0f7fa, #ffffff);
   padding: 15px;
@@ -13,6 +16,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
 
 .feature:hover {
   transform: translateY(-10px) scale(1.05);
@@ -30,8 +34,13 @@
   transition: color 0.3s ease;
 }
 
+
+.solutions {
+  margin-top: 50px;
+
 .feature:hover h2 {
   color: #007bff;
+
 }
 
 .feature p {
@@ -189,5 +198,14 @@ body {
 @media (max-width: 480px) {
   .feature {
       width: 90%;
+
+    }
+  } 
+
+
+
+  
+
   }
 }
+
