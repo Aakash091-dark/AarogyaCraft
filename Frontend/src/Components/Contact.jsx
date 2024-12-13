@@ -31,6 +31,7 @@ const Contact = () => {
           <input
             type="text"
             id="name"
+            // sdfgh
             name="name"
             value={formData.name}
             onChange={handleChange}
