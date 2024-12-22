@@ -37,12 +37,15 @@ const Footer = () => {
       </div>
       <hr className="divider" />
       <div className="bottom-section">
+
         <div className="policy-links">
-          <a href="#">Privacy Policy</a>
+
+          <Link to="/privacypolicy">Privacy Policy</Link>
           <Link to="/terms">Terms & Conditions</Link>
-          {/* <a href="#">Terms & Conditions</a> */}
           <a href="#">Cookies Settings</a>
+          
         </div>
+
         <p>© 2024 AarogyaCraft. All rights reserved.</p>
       </div>
     </footer>

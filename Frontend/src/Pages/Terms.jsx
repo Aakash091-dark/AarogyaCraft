@@ -2,8 +2,10 @@ import React from 'react'
 import Term from './Term'
 import './Terms.css'
 
-function Terms() {
+// Terms & Conditions
+// Terms & Conditions and Privacy Policy both follows the same styling
 
+function Terms() {
     // To add a term simply give a title and define an array string, each string is a point
 
   let title1 = "Introduction"
@@ -47,13 +49,16 @@ function Terms() {
 
   return (
     <div className="terms-container">
+
       <h1 className="headline">Terms and Conditions</h1>
+
       <div>
         <Term title={title1} points={points1} />
         <Term title={title2} points={points2} />
         <Term title={title3} points={points3} />
         <Term title={title4} points={points4} />
       </div>
+      
     </div>
   )
 }
