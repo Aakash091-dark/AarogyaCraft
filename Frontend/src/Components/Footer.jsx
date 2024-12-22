@@ -39,7 +39,8 @@ const Footer = () => {
       <div className="bottom-section">
         <div className="policy-links">
           <a href="#">Privacy Policy</a>
-          <a href="#">Terms & Conditions</a>
+          <Link to="/terms">Terms & Conditions</Link>
+          {/* <a href="#">Terms & Conditions</a> */}
           <a href="#">Cookies Settings</a>
         </div>
         <p>© 2024 AarogyaCraft. All rights reserved.</p>
