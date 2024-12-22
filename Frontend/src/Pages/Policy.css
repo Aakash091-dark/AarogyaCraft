@@ -1,0 +1,32 @@
+.term-container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.term-container h2{
+    font-size: 1.8rem;
+    text-align: left;
+}
+
+.points p{
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+@media(max-width:768px){
+    .term-container h2{
+        font-size: 1.6rem;
+    }
+    .points p{
+        font-size: 1rem;
+    }
+}
+
+@media(max-width:640px){
+    .term-container h2{
+        font-size: 1.1rem;
+    }
+    .points p{
+        font-size: 0.9rem;
+    }
+}
