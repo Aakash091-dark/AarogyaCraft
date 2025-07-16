@@ -8,20 +8,20 @@ import Footer from "./Components/Footer";
 import AboutUs from "./Pages/AboutUs";
 import Terms from "./Pages/Terms";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import CustomPage from "./Pages/CustomPage";
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <LandingPage/>
+      <LandingPage />
       <Routes>
-
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<OurServices />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-
+        <Route path="/custom" element={<CustomPage />} />
       </Routes>
       <Footer />
     </Router>
