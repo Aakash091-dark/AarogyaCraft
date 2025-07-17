@@ -9,7 +9,7 @@ import AboutUs from "./Pages/AboutUs";
 import Terms from "./Pages/Terms";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import CustomPage from "./Pages/CustomPage";
-
+import CustomPage from "./Pages/prebuiltPage";
 function App() {
   return (
     <Router>
@@ -22,6 +22,7 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         <Route path="/custom" element={<CustomPage />} />
+        <Route path="/prebuilt" element={<PrebuiltPage />} />
       </Routes>
       <Footer />
     </Router>
