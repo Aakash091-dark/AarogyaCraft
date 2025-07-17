@@ -26,7 +26,7 @@
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   background: linear-gradient(135deg, #ffffff, #e3f2fd);
-  color: #007bff; /* Hover text color */
+  color: #054f99; /* Hover text color */
 }
 
 .feature h2 {

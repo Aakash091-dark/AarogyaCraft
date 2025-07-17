@@ -20,7 +20,7 @@
     height: 100%; /* Ensure the logo container uses the full navbar height */
     font-size: 1.9rem;
     font-weight: bold;
-    color: #1a73e8;
+    color:  #054f99;
     
   }
   
@@ -42,19 +42,19 @@
       position: relative;
       margin: 0 15px;
       font-size: 17px;
-      color: #1a73e8;
+      color: #054f99;
       cursor: pointer;
     }
     
     
     .nav-links a {
       text-decoration: none;
-      color: #1a73e8;
+      color: #054f99;
       transition: color 0.3s;
     }
     
     .nav-links a:hover {
-      color: #0047ab;
+      color: #054f99;
     }
     
     /* Dropdown Icon Styling */

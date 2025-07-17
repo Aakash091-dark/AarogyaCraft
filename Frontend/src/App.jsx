@@ -9,7 +9,7 @@ import AboutUs from "./Pages/AboutUs";
 import Terms from "./Pages/Terms";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import CustomPage from "./Pages/CustomPage";
-import CustomPage from "./Pages/prebuiltPage";
+import PrebuiltPage from "./Pages/prebuiltPage";
 function App() {
   return (
     <Router>
