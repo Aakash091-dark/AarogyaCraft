@@ -12,8 +12,8 @@ const LandingPage = () => {
       {/* Main Content */}
       <Routes>
       <Route path="/" element={<Home />} />
-          <Route path="/custom" element={<CustomPage />} />
-          <Route path="/prebuilt" element={<PrebuiltPage />} />
+          {/* <Route path="/custom" element={<CustomPage />} /> */}
+          {/* <Route path="/prebuilt" element={<PrebuiltPage />} /> */}
       </Routes>
     </div>
   );
@@ -139,38 +139,20 @@ const Home = () => (
     </div>
   </div>
 );
-const CustomPage = () => (
-  <div>
-    <Custom />
-  </div>
-);
+// const CustomPage = () => (
+//   <div>
+//     <Custom />
+//   </div>
+// );
 
-const PrebuiltPage = () => (
-  <div>
-    <Prebuilt />
-  </div>
-);
+// const PrebuiltPage = () => (
+//   <div>
+//     <Prebuilt />
+//   </div>
+// );
 
-const Custom = () => (
-  <div className="page">
-    <h1>Custom Solutions</h1>
-    <p>
-      Here you can explore custom solutions tailored to your industry needs.
-    </p>
-    {/* <Link to="/" className="btn">
-      Back to Home
-    </Link> */}
-  </div>
-);
 
-const Prebuilt = () => (
-  <div className="page">
-    <h1>Pre-built Solutions</h1>
-    <p>Here you can explore pre-built solutions for quick deployment.</p>
-    {/* <Link to="/" className="btn">
-      Back to Home
-    </Link> */}
-  </div>
-);
+
+
 
 export default LandingPage;
