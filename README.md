@@ -125,7 +125,7 @@ npm install
  ```
 ### 3️⃣ Configure environment variables ###
 - Create .env files for both frontend/ and backend/ with the required configurations (API URLs, database credentials, etc.).
-- Refer to the provided .env.example files for guidance.
+
 ---
 ## 🚀 Running the Application ##
 #### **Frontend**  (using Vite): ####
