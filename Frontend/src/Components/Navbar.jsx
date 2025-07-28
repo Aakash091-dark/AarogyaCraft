@@ -1,6 +1,13 @@
-import React, { useState } from "react";
+import{ useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { Client, Account } from "appwrite";
+
+const client = new Client()
+  .setEndpoint('https://nyc.cloud.appwrite.io/v1') 
+  .setProject('6886ffec0010e7b19e2'); 
+
+const account = new Account(client);
 
 const Navbar = () => {
   const [showIndustriesDropdown, setShowIndustriesDropdown] = useState(false);
@@ -12,6 +19,15 @@ const Navbar = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [showUserOptions, setShowUserOptions] = useState(false);
   const [passwordError, setPasswordError] = useState("");
+
+  useEffect(() => {
+    account
+      .get()
+      .then((user) => {
+        setLoggedInUser(user.name || user.email.split("@")[0]);
+      })
+      .catch(() => {});
+  }, []);
 
   const handleLanguageSelect = (language) => {
     setSelectedLanguage(language);
@@ -26,7 +42,6 @@ const Navbar = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const name = e.target.nameField ? e.target.nameField.value : "";
 
     if (isSignupMode) {
       if (password.length < 8) {
@@ -40,14 +55,26 @@ const Navbar = () => {
     }
 
     setPasswordError("");
-    const fakeName = email.split('@')[0];
+    const fakeName = email.split("@")[0];
     setLoggedInUser(fakeName);
     setShowLoginForm(false);
   };
 
+  // ✅ Google Login
+  const handleGoogleLogin = () => {
+    account.createOAuth2Session(
+      "google",
+      window.location.origin, // Success redirect
+      window.location.origin  // Failure redirect
+    );
+  };
+
+  // ✅ Logout (including Google session)
   const handleLogout = () => {
-    setLoggedInUser(null);
-    setShowUserOptions(false);
+    account.deleteSession("current").then(() => {
+      setLoggedInUser(null);
+      setShowUserOptions(false);
+    });
   };
 
   return (
@@ -99,7 +126,8 @@ const Navbar = () => {
             {loggedInUser ? (
               <div
                 className="aarogya-username"
-                onClick={() => setShowUserOptions(!showUserOptions)}
+                onMouseEnter={() => setShowUserOptions(true)}
+                onMouseLeave={() => setShowUserOptions(false)}
               >
                 {loggedInUser}
                 {showUserOptions && (
@@ -150,7 +178,11 @@ const Navbar = () => {
             </p>
 
             <div className="aarogya-login-social">
-              <button type="button" className="aarogya-social-button">
+              <button
+                type="button"
+                className="aarogya-social-button"
+                onClick={handleGoogleLogin}
+              >
                 <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" alt="Google" />
                 Sign up with Google
               </button>
