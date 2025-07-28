@@ -1,4 +1,4 @@
-# 🔐 Security Policy
+#  Security Policy
 
 ## Supported Versions
 
@@ -11,7 +11,7 @@ We currently support the latest version of **ArogyaCraft**.
 
 ---
 
-## 📢 Reporting a Vulnerability
+## Reporting a Vulnerability
 
 If you discover a security vulnerability in ArogyaCraft, please **do not open a GitHub issue** or discuss it publicly.
 
@@ -29,7 +29,7 @@ We aim to respond within **48 hours** and will work with you to resolve the issu
 
 ---
 
-## 🤝 Responsible Disclosure
+## Responsible Disclosure
 
 We appreciate the efforts of security researchers and responsible disclosure. Your efforts help us keep the ArogyaCraft community safe and secure. 💚
 
