@@ -3,10 +3,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 
 const authRoutes = require('./routes/authRoutes');
-// const connectDB = require('./config/db');
-
-dotenv.config();
-// connectDB();
+// dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -15,6 +12,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 
 app.get('/', (req, res) => {
+  console.log('Root API hit');
   res.send('Welcome to the AarogyaCraft API');
 });
 
