@@ -1,21 +1,35 @@
-# Security Policy
+#  Security Policy
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+We currently support the latest version of **ArogyaCraft**.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| Latest  | ✅ Yes              |
+| Older   | ❌ No               |
+
+---
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+If you discover a security vulnerability in ArogyaCraft, please **do not open a GitHub issue** or discuss it publicly.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+Instead, please report it **privately and responsibly**:
+
+📧 **Email us at:** [Arogyacraft@gmail.com](mailto:Arogyacraft@gmail.com)
+
+Please include:
+- A detailed description of the issue
+- Steps to reproduce
+- Potential impact
+- Any suggested fix (if available)
+
+We aim to respond within **48 hours** and will work with you to resolve the issue as quickly and safely as possible.
+
+---
+
+## Responsible Disclosure
+
+We appreciate the efforts of security researchers and responsible disclosure. Your efforts help us keep the ArogyaCraft community safe and secure. 💚
+

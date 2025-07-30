@@ -1,7 +1,8 @@
 
 # AarogyaCraft 📊
 
-Welcome to the AarogyaCraft - A Complete Management System Solution ! This repository is a monorepo containing full stack AI powered  management system. Follow this guide to understand the structure, setup, and development workflow.
+An intelligent, full-stack management system built for the future.
+This monorepo brings together AI-powered backend logic and a sleek frontend interface to streamline appointments, user access, service workflows and many more. Whether you're here to explore, contribute, or deploy — this guide walks you through the setup, structure, and development journey.
 ---
 
 ## 📁 Project Overview ##
@@ -11,6 +12,8 @@ The Platform is designed to manage services  with features like:
 - 🔒 User authentication.
 - 📅 Appointment scheduling.
 - 🌐 API integrations.
+- 🚑Medical Reports Analysis
+- 📊Analytics Dashboard
 -  and many more
 
 It includes:
@@ -22,7 +25,7 @@ It includes:
 ## 📂 Project Structure ##
 
 ```plaintext
-healthcare-platform 📂
+ArogyaCraft 📂(root)
 ├── frontend 📂        
 ├── backend 📂         
 ├── docs 🧾            
@@ -125,7 +128,7 @@ npm install
  ```
 ### 3️⃣ Configure environment variables ###
 - Create .env files for both frontend/ and backend/ with the required configurations (API URLs, database credentials, etc.).
-- Refer to the provided .env.example files for guidance.
+
 ---
 ## 🚀 Running the Application ##
 #### **Frontend**  (using Vite): ####
@@ -165,10 +168,10 @@ git commit -m "Add your commit message"
 ``` bash
 git push origin feature/your-feature-name
 ```
-- Submit a pull request for review.
+- Open a pull request and explain the changes you’ve made so we can review them
 
 ---
 ## 📜 License
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) for more details.
 
 
