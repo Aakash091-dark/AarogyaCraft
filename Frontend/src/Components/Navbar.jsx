@@ -1,11 +1,11 @@
 import{ useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import { Client, Account } from "appwrite";
+import { Client, Account , OAuthProvider } from "appwrite";
 
 const client = new Client()
   .setEndpoint('https://nyc.cloud.appwrite.io/v1') 
-  .setProject('6886ffec0010e7b19e2'); 
+  .setProject('6886ffec0010e7b19e2a'); 
 
 const account = new Account(client);
 
@@ -63,10 +63,11 @@ const Navbar = () => {
   // ✅ Google Login
   const handleGoogleLogin = () => {
     account.createOAuth2Session(
-      "google",
-      window.location.origin, // Success redirect
-      window.location.origin  // Failure redirect
-    );
+    OAuthProvider.Google, // provider
+    window.location.origin, // success (optional)
+    window.location.origin, // failure (optional)
+    [] // scopes (optional)
+);
   };
 
   // ✅ Logout (including Google session)
@@ -112,6 +113,7 @@ const Navbar = () => {
             >
               🌐 <span>{selectedLanguage}</span> ▼
             </div>
+            
             {showLanguagesDropdown && (
               <ul className="dropdown-menu">
                 {["English", "Spanish", "French", "Hindi", "Japanese", "Urdu", "German"].map(lang => (
