@@ -9,7 +9,6 @@ function generateToken(userId) {
 
 //Sign-up logic
 exports.signup = async (req, res) => {
-    console.log('SignUp request received:', req.body);
     try {
         const { name, email, password } = req.body;
 
@@ -24,11 +23,13 @@ exports.signup = async (req, res) => {
         }
 
         // Hash the password
-        const hashedPassword = await bcrypt.hash(password, process.env.BCRYPT_SALT_ROUNDS || 12);
+        const saltRounds = parseInt(process.env.BCRYPT_SALT_ROUNDS);
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
+
 
         // Create the user
         const result = await db.query(
-            'INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id, name, email',
+            'INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING name, email',
             [name, email, hashedPassword]
         );
 
@@ -51,7 +52,6 @@ exports.signup = async (req, res) => {
 
 //login logic
 exports.login = async (req, res) => {
-    console.log('Login request received:', req.body);
     try {
         const { email, password } = req.body;
 
