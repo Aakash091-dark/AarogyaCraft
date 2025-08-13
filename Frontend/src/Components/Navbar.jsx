@@ -38,20 +38,64 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const handleLoginOrSignup = (e) => {
+  const handleLoginOrSignup = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
     if (isSignupMode) {
+      // ✅ Password length check (existing handler)
       if (password.length < 8) {
         setPasswordError("Password must be at least 8 characters long.");
         return;
       }
       setPasswordError("");
-      setIsSignupMode(false);
-      alert("Signup successful! Please log in.");
+
+      // ✅ Backend Signup
+      try {
+        const name = e.target.nameField.value; // from your signup form
+        const res = await fetch("http://localhost:5000/api/auth/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, password })
+        });
+
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.message || "Signup failed");
+
+        // ✅ Keep your original behavior
+        setIsSignupMode(false);
+        // alert("Signup successful! Please log in.");
+      } catch (err) {
+        alert(err.message);
+      }
+      setShowLoginForm(false);
       return;
+    }
+
+    // ✅ Existing case: Login
+    setPasswordError("");
+
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || "Login failed");
+
+      // Store JWT for future API calls
+      localStorage.setItem("token", data.token);
+
+      // ✅ Keep your fakeName logic for now, but also use backend name if available
+      const displayName = data.user?.name || email.split("@")[0];
+      setLoggedInUser(displayName);
+      setShowLoginForm(false);
+
+    } catch (err) {
+      alert(err.message);
     }
 
     setPasswordError("");

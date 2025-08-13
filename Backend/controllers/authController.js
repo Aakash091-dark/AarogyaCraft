@@ -3,8 +3,8 @@ const bcrypt = require('bcryptjs');
 const db = require('../config/dbConnect'); // assumes db is setup with pg.Pool
 
 // token creator
-function generateToken(userId) {
-  return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRATION || '1h' });
+function generateToken(username) {
+  return jwt.sign({ username }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRATION || '1h' });
 }
 
 //Sign-up logic
@@ -13,13 +13,13 @@ exports.signup = async (req, res) => {
         const { name, email, password } = req.body;
 
         if (!email || !name || !password) {
-            return res.status(400).send('All fields are required');
+            return res.status(400).json({ error: 'All fields are required' });
         }
 
         // Check if the email exists
         const userCheck = await db.query('SELECT * FROM users WHERE email = $1', [email]);
         if (userCheck.rows.length > 0) {
-            return res.status(400).send('Email is already associated with an account');
+            return res.status(400).json({ error: 'Email is already associated with an account' });
         }
 
         // Hash the password
@@ -36,7 +36,7 @@ exports.signup = async (req, res) => {
         const user = result.rows[0];
 
         // Generate JWT token
-        const token = generateToken(user.id);
+        const token = generateToken(user.name);
 
         return res.status(201).json({
             message: 'SignUp successful',
@@ -46,7 +46,7 @@ exports.signup = async (req, res) => {
 
     } catch (err) {
         console.error(err);
-        return res.status(500).send('Error in registering user');
+        return res.status(500).json( {error: 'Error in registering user'} );
     }
 };
 
@@ -56,30 +56,29 @@ exports.login = async (req, res) => {
         const { email, password } = req.body;
 
         if (!email || !password) {
-            return res.status(400).send('All fields are required');
+            return res.status(400).json({ error: 'All fields are required' });
         }
 
 
         // Check if the user exists
         const userCheck = await db.query('SELECT * FROM users WHERE email = $1', [email]);
         if (userCheck.rows.length === 0) {
-            return res.status(404).send('Invalid credentials!');
+            return res.status(404).json( {message: 'Invalid credentials!'} );
         }
 
         const user = userCheck.rows[0];
 
         // Verify password
         if(!user || !(await bcrypt.compare(password, user.password))) {
-            return res.status(401).send('Invalid credentials!');
+            return res.status(401).json( {message: 'Invalid credentials!'} );
         }
 
         // Generate JWT token
-        const token = generateToken(user.id);
+        const token = generateToken(user.name);
 
         return res.status(200).json({
             message: 'Login successful',
             user: {
-                id: user.id,
                 name: user.name,
                 email: user.email
             },
@@ -87,6 +86,6 @@ exports.login = async (req, res) => {
         });
     } catch (err) {
         console.error(err);
-        return res.status(500).send('Error in logging in user');
+        return res.status(500).json( {error: 'Error in logging in user'} );
     }
 };
