@@ -1,60 +1,83 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './AboutUs.css';
+import SectionHeader from '../Components/SectionHeader';
 
 const AboutUs = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <div className="about-us-container">
-      {/* About Us Card */}
-      <div className="about-us-card">
-        <h2>About Us</h2>
-        <p>
-          At AarogyaCraft, we are revolutionizing how businesses embrace cloud technology. Since our founding in 2024, we have been committed to empowering organizations with innovative, secure, and scalable solutions that align with their unique goals and industry challenges.
-        </p>
-      </div>
+    <div className="about-us-page">
+      <SectionHeader
+        title="About AarogyaCraft"
+        subtitle="Revolutionizing business operations with innovative cloud solutions."
+      />
 
-      {/* Who We Are Card */}
-      <div className="about-us-card">
-        <h2>Who We Are</h2>
-        <p>
-          We are a team of technology enthusiasts, problem-solvers, and innovators dedicated to simplifying cloud adoption for businesses of all sizes. Our expertise lies in designing solutions that not only address today’s needs but also anticipate the challenges of tomorrow.
-        </p>
-      </div>
+      <main className="container">
+        <section className="about-section">
+          <div className="about-content">
+            <h2>Who We Are</h2>
+            <p>
+              Founded in 2024, AarogyaCraft is a team of technology
+              enthusiasts, problem-solvers, and innovators dedicated to
+              simplifying cloud adoption. We design intelligent, secure, and
+              scalable solutions that empower businesses to thrive in a
+              digital-first world.
+            </p>
+          </div>
+        </section>
 
-      {/* Our Mission Card */}
-      <div className="about-us-card">
-        <h2>Our Mission</h2>
-        <p>
-          To redefine the way businesses operate and grow by providing intelligent, scalable, and adaptive cloud solutions.
-        </p>
-      </div>
+        <section className="mission-vision-section">
+          <div className="mission-card">
+            <h3>Our Mission</h3>
+            <p>
+              To redefine how businesses operate and grow by providing
+              intelligent, scalable, and adaptive cloud solutions that drive
+              efficiency and innovation.
+            </p>
+          </div>
+          <div className="vision-card">
+            <h3>Our Vision</h3>
+            <p>
+              To become a global leader in cloud services by setting new
+              standards, building smart ecosystems, and inspiring
+              sustainability.
+            </p>
+          </div>
+        </section>
 
-      {/* Our Vision Card */}
-      <div className="about-us-card">
-        <h2>Our Vision</h2>
-        <p>
-          To become a global leader in cloud services by setting new standards, building smart ecosystems, and inspiring sustainability.
-        </p>
-      </div>
-
-      {/* Why Choose Us Card */}
-      <div className="about-us-card">
-        <h2>Why Choose Us?</h2>
-        <p>
-          Customer-centric approach, innovation at the core, scalable & secure solutions, and industry expertise make us stand out.
-        </p>
-      </div>
-
-      {/* Our Journey So Far Card */}
-      <div className="about-us-card">
-        <h2>Our Journey So Far</h2>
-        <p>
-          At AarogyaCraft, our story is just beginning, but our ambitions are limitless.
-        </p>
-      </div>
+        <section className="why-choose-us-section">
+          <h2>Why Choose Us?</h2>
+          <div className="reasons-grid">
+            <div className="reason-card">
+              <h4>Customer-Centric</h4>
+              <p>
+                Our clients are at the heart of everything we do. We build
+                partnerships based on trust and a deep understanding of your
+                needs.
+              </p>
+            </div>
+            <div className="reason-card">
+              <h4>Innovation-Driven</h4>
+              <p>
+                We are committed to continuous innovation, leveraging the
+                latest technologies to deliver cutting-edge solutions.
+              </p>
+            </div>
+            <div className="reason-card">
+              <h4>Scalable & Secure</h4>
+              <p>
+                Our solutions are built to grow with your business, with
+                security as a top priority to protect your valuable data.
+              </p>
+            </div>
+            <div className="reason-card">
+              <h4>Industry Expertise</h4>
+              <p>
+                We have a deep understanding of various industries, allowing us
+                to provide tailored solutions that deliver real results.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   );
 };

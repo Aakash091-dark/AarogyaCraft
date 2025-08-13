@@ -14,8 +14,8 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <LandingPage />
       <Routes>
+        <Route path="/" element={<LandingPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<OurServices />} />
         <Route path="/aboutUs" element={<AboutUs />} />

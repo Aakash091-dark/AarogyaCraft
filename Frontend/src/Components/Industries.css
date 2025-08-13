@@ -1,85 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-/* Container for the entire industries section */
-.card-container {
-    text-align: center;
-    padding: 20px;
-    background-color: #f8f9fa;
-    color: #333;
-    font-family: 'Poppins', sans-serif;
+.industries-section {
+  padding: 4rem 0;
+  background-color: var(--secondary-color);
 }
 
-/* Heading for the industries section */
-.container-heading {
-    /* display: flex; */
-    font-size: 3rem;
-    font-weight: 600;
-    color: #0073e6;
-    margin-bottom: 30px;
-    letter-spacing: 1px;
-    justify-content: center;
-    align-items: center;
-
+.section-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
 }
 
-/* Carousel Wrapper */
-.carousel-wrapper {
-    width: 100%;
-    /* overflow: hidden; */
-    position: relative;
-    align-items: center;
-    padding-bottom: 2rem;
+.section-subheading {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
 }
 
-/* Slick Carousel Dots Styling */
+.carousel-container {
+  padding: 0 50px;
+}
+
+.industry-card {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 15px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.industry-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-image {
+  margin-bottom: 1.5rem;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.industry-logo {
+  max-width: 60px;
+  max-height: 60px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* Slick Carousel Customization */
 .slick-dots li button:before {
-    font-size: 12px;
-    color: #0073e6;
+  font-size: 12px;
+  color: var(--primary-color);
 }
 
 .slick-dots li.slick-active button:before {
-    color: #0073e6;
+  color: var(--primary-color);
+  opacity: 1;
 }
 
-/* Custom arrow styles (optional if you use carousel arrows) */
-.slick-prev:before, .slick-next:before {
-    color: #0073e6;
-    font-size: 30px;
+.slick-prev,
+.slick-next {
+  font-size: 20px;
+  color: var(--primary-color);
 }
 
-/* Individual Card (inside the carousel) */
-.slick-slide > div {
-    padding: 0 30px; /* Increased padding for horizontal spacing between cards */
-    height: 100%;
+.slick-prev:before,
+.slick-next:before {
+  color: var(--primary-color);
 }
-
-/* Responsive design for carousel */
-@media (max-width: 768px) {
-    .container-heading {
-        font-size: 2rem;
-    }
-
-    .slick-slide > div {
-        padding: 0 15px; /* Smaller padding for mobile view */
-    }
-}
-
-/* Last paragraph styling */
-.last_para {
-    text-align: center;
-    font-size: 1.5em;
-    margin-top: 20px;
-    color: #0073e6;
-    font-family: 'Poppins', sans-serif;
-}
-
-
-.industry-image {
-    width: 200px; /* Set appropriate size */
-    height: auto;
-    margin-top: 10px; /* Space between title and image */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-

@@ -1,52 +1,70 @@
-import React from "react";
-import "./Footer.css";
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import AboutUs from "../Pages/AboutUs";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="top-section">
-        <span className="logo">Thanks for visiting !!</span>
-        <div className="nav-links-container">
-          <nav className="nav-links">
-            <a href="#">Get Started</a>
-            <a href="#">Contact Us</a>
-            <li>
-          <Link to="/AboutUs">AboutUs</Link>
-        </li>
-            <a href="#">Support Center</a>
-            <a href="#">Blog Posts</a>
-          </nav>
+    <footer className="site-footer">
+      <div className="container">
+        <div className="footer-content">
+          <div className="footer-about">
+            <h3>AarogyaCraft</h3>
+            <p>
+              Streamlining operations for a brighter, more efficient future.
+            </p>
+          </div>
+          <div className="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li>
+                <Link to="/aboutUs">About Us</Link>
+              </li>
+              <li>
+                <Link to="/services">Our Services</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
+              <li>
+                <Link to="/blog">Blog</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="footer-legal">
+            <h4>Legal</h4>
+            <ul>
+              <li>
+                <Link to="/terms">Terms & Conditions</Link>
+              </li>
+              <li>
+                <Link to="/privacypolicy">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link to="/cookies">Cookie Policy</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="footer-social">
+            <h4>Follow Us</h4>
+            <div className="social-icons">
+              <a href="https://www.instagram.com/aaorgyacraft/" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-facebook"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/aarogya-craft-471011341/" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-linkedin"></i>
+              </a>
+              <a href="https://github.com/Aakash091-dark/AarogyaCraft" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div className="social-icons">
-          <a href="https://www.instagram.com/aaorgyacraft/" target="_blank" rel="noopener noreferrer">
-            <img src="src/assets/images/instagram.jpg" alt="Instagram" className="social-icon" />
-          </a>
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <img src="src/assets/images/facebook.jpg" alt="Facebook" className="social-icon" />
-          </a>
-          <a href="https://www.linkedin.com/in/aarogya-craft-471011341/" target="_blank" rel="noopener noreferrer">
-            <img src="src/assets/images/linkedin.jpg" alt="LinkedIn" className="social-icon" />
-          </a>
-          <a href="https://github.com/Aakash091-dark/AarogyaCraft" target="_blank" rel="noopener noreferrer">
-            <img src="src/assets/images/github.jpg" alt="GitHub" className="social-icon" />
-          </a>
+        <div className="footer-bottom">
+          <p>&copy; {new Date().getFullYear()} AarogyaCraft. All rights reserved.</p>
         </div>
-      </div>
-      <hr className="divider" />
-      <div className="bottom-section">
-
-        <div className="policy-links">
-
-          <Link to="/privacypolicy">Privacy Policy</Link>
-          <Link to="/terms">Terms & Conditions</Link>
-          <a href="#">Cookies Settings</a>
-          
-        </div>
-
-        <p>© 2024 AarogyaCraft. All rights reserved.</p>
       </div>
     </footer>
   );

@@ -1,32 +1,35 @@
-import{ useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import "./Navbar.css";
-import { Client, Account , OAuthProvider } from "appwrite";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
+import Auth from './Auth';
+import Logo from './Logo';
+import { Account, Client } from 'appwrite';
 
 const client = new Client()
-  .setEndpoint('https://nyc.cloud.appwrite.io/v1') 
-  .setProject('6886ffec0010e7b19e2a'); 
+  .setEndpoint('https://nyc.cloud.appwrite.io/v1')
+  .setProject('6886ffec0010e7b19e2a');
 
 const account = new Account(client);
 
 const Navbar = () => {
   const [showIndustriesDropdown, setShowIndustriesDropdown] = useState(false);
   const [showLanguagesDropdown, setShowLanguagesDropdown] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("Languages");
+  const [selectedLanguage, setSelectedLanguage] = useState('Languages');
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showLoginForm, setShowLoginForm] = useState(false);
-  const [isSignupMode, setIsSignupMode] = useState(false);
+  const [showAuthForm, setShowAuthForm] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [showUserOptions, setShowUserOptions] = useState(false);
-  const [passwordError, setPasswordError] = useState("");
 
   useEffect(() => {
-    account
-      .get()
-      .then((user) => {
-        setLoggedInUser(user.name || user.email.split("@")[0]);
-      })
-      .catch(() => {});
+    const checkUser = async () => {
+      try {
+        const user = await account.get();
+        setLoggedInUser(user.name || user.email.split('@')[0]);
+      } catch (error) {
+        // Not logged in
+      }
+    };
+    checkUser();
   }, []);
 
   const handleLanguageSelect = (language) => {
@@ -38,85 +41,8 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const handleLoginOrSignup = async (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-
-    if (isSignupMode) {
-      // ✅ Password length check (existing handler)
-      if (password.length < 8) {
-        setPasswordError("Password must be at least 8 characters long.");
-        return;
-      }
-      setPasswordError("");
-
-      // ✅ Backend Signup
-      try {
-        const name = e.target.nameField.value; // from your signup form
-        const res = await fetch("http://localhost:5000/api/auth/signup", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, password })
-        });
-
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.message || "Signup failed");
-
-        // ✅ Keep your original behavior
-        setIsSignupMode(false);
-        // alert("Signup successful! Please log in.");
-      } catch (err) {
-        alert(err.message);
-      }
-      setShowLoginForm(false);
-      return;
-    }
-
-    // ✅ Existing case: Login
-    setPasswordError("");
-
-    try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password })
-      });
-
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.message || "Login failed");
-
-      // Store JWT for future API calls
-      localStorage.setItem("token", data.token);
-
-      // ✅ Keep your fakeName logic for now, but also use backend name if available
-      const displayName = data.user?.name || email.split("@")[0];
-      setLoggedInUser(displayName);
-      setShowLoginForm(false);
-
-    } catch (err) {
-      alert(err.message);
-    }
-
-    setPasswordError("");
-    const fakeName = email.split("@")[0];
-    setLoggedInUser(fakeName);
-    setShowLoginForm(false);
-  };
-
-  // ✅ Google Login
-  const handleGoogleLogin = () => {
-    account.createOAuth2Session(
-    OAuthProvider.Google, // provider
-    window.location.origin, // success (optional)
-    window.location.origin, // failure (optional)
-    [] // scopes (optional)
-);
-  };
-
-  // ✅ Logout (including Google session)
   const handleLogout = () => {
-    account.deleteSession("current").then(() => {
+    account.deleteSession('current').then(() => {
       setLoggedInUser(null);
       setShowUserOptions(false);
     });
@@ -124,20 +50,26 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`navbar ${showLoginForm ? "blurred" : ""}`}>
-        <div className="logo">AarogyaCraft</div>
+      <nav className={`navbar ${showAuthForm ? 'blurred' : ''}`}>
+        <Logo />
 
-        <div className="hamburger" onClick={toggleMenu}>☰</div>
+        <div className="hamburger" onClick={toggleMenu}>
+          ☰
+        </div>
 
-        <ul className={`nav-links ${menuOpen ? "show" : ""}`}>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/services">Our Services</Link></li>
+        <ul className={`nav-links ${menuOpen ? 'show' : ''}`}>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/services">Our Services</Link>
+          </li>
           <li
             className="dropdown"
             onMouseEnter={() => setShowIndustriesDropdown(true)}
             onMouseLeave={() => setShowIndustriesDropdown(false)}
           >
-            <span className="exper">Expertizes</span>
+            <span className="exper">Expertise</span>
             <span className="dropdown-icon">▼</span>
             {showIndustriesDropdown && (
               <div className="expertizes-dropdown-menu">
@@ -149,7 +81,9 @@ const Navbar = () => {
               </div>
             )}
           </li>
-          <li><Link to="/contact">Contact Us</Link></li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
+          </li>
           <li className="language-container">
             <div
               className="language-dropdown"
@@ -157,10 +91,18 @@ const Navbar = () => {
             >
               🌐 <span>{selectedLanguage}</span> ▼
             </div>
-            
+
             {showLanguagesDropdown && (
               <ul className="dropdown-menu">
-                {["English", "Spanish", "French", "Hindi", "Japanese", "Urdu", "German"].map(lang => (
+                {[
+                  'English',
+                  'Spanish',
+                  'French',
+                  'Hindi',
+                  'Japanese',
+                  'Urdu',
+                  'German',
+                ].map((lang) => (
                   <li key={lang} onClick={() => handleLanguageSelect(lang)}>
                     {lang}
                   </li>
@@ -185,62 +127,20 @@ const Navbar = () => {
             ) : (
               <button
                 className="aarogya-login-button"
-                onClick={() => setShowLoginForm(true)}
+                onClick={() => setShowAuthForm(true)}
               >
-                {isSignupMode ? "Sign Up" : "Login"}
+                Login
               </button>
             )}
           </li>
         </ul>
       </nav>
 
-      {showLoginForm && (
-        <div className="aarogya-login-overlay">
-          <form className="aarogya-login-form" onSubmit={handleLoginOrSignup}>
-            <div className="close-button" onClick={() => setShowLoginForm(false)}>✕</div>
-
-            <h2 className="login-form-heading">Welcome to AarogyaCraft</h2>
-
-            <input type="email" name="email" className="aarogya-login-input" placeholder="Email" required />
-            <input type="password" name="password" className="aarogya-login-input" placeholder="Password" required />
-
-            {isSignupMode && passwordError && (
-              <div className="password-requirement">{passwordError}</div>
-            )}
-            {isSignupMode && (
-              <input type="text" name="nameField" className="aarogya-login-input" placeholder="Full Name" required />
-            )}
-
-            <button type="submit" className="aarogya-login-submit">
-              {isSignupMode ? "Sign Up" : "Login"}
-            </button>
-
-            <p className="aarogya-login-toggle">
-              {isSignupMode ? (
-                <>Already have an account? <span onClick={() => { setIsSignupMode(false); setPasswordError(""); }}>Login here</span></>
-              ) : (
-                <>New user? <span onClick={() => setIsSignupMode(true)}>Sign up here</span></>
-              )}
-            </p>
-
-            <div className="aarogya-login-social">
-              <button
-                type="button"
-                className="aarogya-social-button"
-                onClick={handleGoogleLogin}
-              >
-                <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" alt="Google" />
-                Sign up with Google
-              </button>
-
-              <button type="button" className="aarogya-social-button">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook" />
-                Sign up with Facebook
-              </button>
-            </div>
-
-          </form>
-        </div>
+      {showAuthForm && (
+        <Auth
+          closeForm={() => setShowAuthForm(false)}
+          setLoggedInUser={setLoggedInUser}
+        />
       )}
     </>
   );

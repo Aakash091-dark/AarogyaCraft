@@ -1,276 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-/* Services Section */
-.services-container {
-    text-align: center;
-    padding: 20px;
-    background-color: #f8f9fa;
-    color: #333;
-    font-family: 'Arial', sans-serif;
-    animation: fadeIn 1s ease-in-out;
+.services-page {
+  background-color: var(--secondary-color);
+  padding-bottom: 4rem;
 }
 
-/* Cards Container */
-.CardS-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 30px 0;
-    flex-wrap: wrap;
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }
 
-/* Individual Card */
-.CARD, .card1 {
-    background: linear-gradient(135deg, #e0f7fa, #ffffff);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    width: 30%;
-    min-height: 250px;
-    text-align: left;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Card Animation */
-.CARD::before, .card1::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0, 123, 255, 0.2), transparent);
-    transform: scale(0);
-    transition: transform 0.4s ease;
-    z-index: 0;
-}
-
-.CARD:hover::before, .card1:hover::before {
-    transform: scale(1);
-}
-
-/* Hover Effects */
-.CARD:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #ffffff, #e3f2fd);
-}
-
-.card1:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #ffffff, #e3f2fd);
-}
-
-/* Card Title */
-.CARD h2, .card1 h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #333;
-    position: relative;
-    z-index: 1;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-    transition: color 0.3s ease;
-}
-
-.CARD:hover h2, .card1:hover h2 {
-    color: #007bff;
-}
-
-/* Card Text */
-.CARD p, .card1 p {
-    font-size: 0.9em;
-    color: #555;
-    line-height: 1.5;
-    z-index: 1;
-    position: relative;
-    margin-bottom: 10px;
-}
-
-/* Card List */
-.CARD ul, .card1 ul {
-    color: #333;
-    margin: 15px 0;
-    padding-left: 20px;
-    list-style: disc;
-    position: relative;
-    z-index: 1;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-}
-
-/* Expand List on Hover */
-.CARD:hover ul, .card1:hover ul {
-    max-height: 500px; /* Adjust to fit content */
-}
-
-/* List Item Animation */
-.CARD ul li, .card1 ul li {
-    opacity: 0;
-    transform: translateX(-10px);
-    animation: fadeIn 0.5s ease forwards;
-    animation-delay: calc(0.2s * var(--i));
-    background-color: #0073e6;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    transform: translateY(30px);
-    animation: slideUp 1s ease-in-out forwards;
-}
-
-/* Keyframes for Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateX(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .card, .card1 {
-        width: 80%;
-        min-height: auto;
-    }
-}
-
-/* Contact Page Styling */
-.contact-page {
-  color: #007bff;
-  padding: 20px;
+.service-card {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
   text-align: center;
-  font-family: 'Poppins', sans-serif;
-  animation: fadeIn 1s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: fadeInScale 1s ease-in-out;
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
 
-.form-group {
-  margin-bottom: 15px;
+.service-icon {
+  font-size: 3rem;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.service-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.service-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   text-align: left;
-  margin-right: 25px;
-  animation: slideInLeft 0.8s ease-in-out;
 }
 
-label {
-  font-size: 16px;
+.service-card ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.service-card ul li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
   font-weight: bold;
-  color: #007bff;
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid black;
-  border-radius: 4px;
-  margin-top: 5px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
-}
-
-textarea {
-  height: 150px;
-}
-
-button.submit-btn {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards 0.5s;
-}
-
-button.submit-btn:hover {
-  background-color: #00509e;
-  transform: scale(1.05);
-}
-
-/* Keyframes for Contact Page Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.last_para {
-    text-align: center;
-    font-size: 1.5em;
-    margin-top: 20px;
-    color: #0073e6;
-    font-family: 'Arial', sans-serif;
 }

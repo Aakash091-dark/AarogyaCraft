@@ -1,158 +1,75 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Hero from "./Hero";
-import Industries from "./Industries";
-import PrebuiltButtons from "./PrebuiltButtons";
-import CustomButtons from "./CustomButtons";
-import "./LandingPage.css"; // Ensure this file includes the relevant CSS
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Hero from './Hero';
+import Industries from './Industries';
+import './LandingPage.css';
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
-      {/* Main Content */}
-      <Routes>
-      <Route path="/" element={<Home />} />
-          {/* <Route path="/custom" element={<CustomPage />} /> */}
-          {/* <Route path="/prebuilt" element={<PrebuiltPage />} /> */}
-      </Routes>
+      <Hero />
+      <main className="container">
+        <section className="solutions-overview">
+          <h2>Tailored Management Systems for Every Industry</h2>
+        </section>
+
+        <section className="features-grid">
+          <div className="feature-card">
+            <h3>Custom Solutions</h3>
+            <p>
+              Custom-built systems to address your specific business needs and
+              optimize your workflow for enhanced productivity and scalability.
+            </p>
+            <ul>
+              <li>Tailored Workflows</li>
+              <li>Scalable Architecture</li>
+              <li>Enhanced Productivity</li>
+            </ul>
+          </div>
+          <div className="feature-card">
+            <h3>Pre-built Solutions</h3>
+            <p>
+              Ready-to-use modules for rapid deployment. Get up and running
+              quickly with our cost-effective and industry-specific solutions.
+            </p>
+            <ul>
+              <li>Rapid Deployment</li>
+              <li>Cost-Effective</li>
+              <li>Industry-Specific</li>
+            </ul>
+          </div>
+          <div className="feature-card">
+            <h3>Diverse Industry Offerings</h3>
+            <p>
+              From healthcare to finance, we offer specialized solutions to meet
+              the unique challenges of your industry.
+            </p>
+            <ul>
+              <li>Healthcare & Education</li>
+              <li>Retail & Manufacturing</li>
+              <li>Finance & Technology</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="cta-section">
+          <h2>Ready to Get Started?</h2>
+          <p>
+            Explore our solutions and find the perfect fit for your business.
+          </p>
+          <div className="cta-buttons">
+            <Link to="/custom" className="btn btn-primary">
+              Build a Custom Solution
+            </Link>
+            <Link to="/prebuilt" className="btn btn-secondary">
+              Explore Pre-built Options
+            </Link>
+          </div>
+        </section>
+      </main>
+      <Industries />
     </div>
   );
 };
-
-const Home = () => (
-  <div className="home">
-    {/* Hero Section */}
-    <div className="hero">
-      <Hero />
-      <Industries />
-    </div>
-
-
-    <div className="solutions">
-      <h1>
-        <span>Tailored Management Systems</span>
-        {/* <span className="line2">for Every Industry</span> */}
-      </h1>
-      <p>
-        <span><b>
-          Discover our innovative management systems designed to streamline
-          operations across various.</b>
-        </span>
-        <span><b>
-          sectors. Whether you need a custom solution or a pre-built option, we
-          have you covered.</b>
-        </span>
-      </p>
-      {/* Features Section */}  
-          <div className="features">
-       <div className="feature">
-        <h2>Custom Solutions Tailored to Your Needs</h2>
-          <p>
-            <ul>
-              <li>
-                <strong>Tailored Solutions:</strong> Custom-built systems to
-                address your specific business needs.
-              </li>
-              <li>
-                <strong>Workflow Optimization:</strong> Simplify operations and
-                eliminate inefficiencies.
-              </li>
-              <li>
-                <strong>Enhanced Productivity:</strong> Boost output with
-                innovative, user-friendly tools.
-              </li>
-              <li>
-                <strong>Scalable Design:</strong> Solutions that grow with your
-                business.
-              </li>
-              <li>
-                <strong>Cost Efficiency:</strong> Save time and resources with
-                automation.
-              </li>
-            </ul>
-          </p>
-        </div>
-        <div className="feature">
-          <h2>Pre-built Solutions for Quick Implementation</h2>
-          <p>
-            <ul>
-              <li>
-                <strong>Ready-to-Use Modules:</strong> Pre-designed solutions
-                for rapid deployment.
-              </li>
-              <li>
-                <strong>Quick Setup:</strong> Save time with hassle-free
-                implementation.
-              </li>
-              <li>
-                <strong>Cost-Effective:</strong> Affordable solutions without
-                compromising quality.
-              </li>
-              <li>
-                <strong>Scalable Design:</strong> Easily expandable as your
-                business grows.
-              </li>
-              <li>
-                <strong>Industry-Specific:</strong> Tailored for diverse sectors
-                and needs.
-              </li>
-            </ul>
-          </p>
-        </div>
-        <div className="feature">
-          <h2>Explore Our Diverse Industry Offerings</h2>
-          <p>
-            <ul>
-              <li>
-                <strong>Healthcare Solutions:</strong> Streamlined management
-                for hospitals and clinics.
-              </li>
-              <li>
-                <strong>Education Systems:</strong> Enhanced tools for schools
-                and universities.
-              </li>
-              <li>
-                <strong>Retail Platforms:</strong> Efficient inventory and sales
-                tracking.
-              </li>
-              <li>
-                <strong>Manufacturing Tools:</strong> Simplified production and
-                supply chain management.
-              </li>
-              <li>
-                <strong>Finance Services:</strong> Secure and automated
-                processes.
-              </li>
-            </ul>
-          </p>
-        </div>
-      </div>
-      {/* Button Links */}
-      <div className="buttons">
-        <Link to="/custom" className="btn custom-btn">
-          Custom
-        </Link>
-        <Link to="/prebuilt" className="btn prebuilt-btn">
-          Pre-built
-        </Link>
-      </div>
-    </div>
-  </div>
-);
-// const CustomPage = () => (
-//   <div>
-//     <Custom />
-//   </div>
-// );
-
-// const PrebuiltPage = () => (
-//   <div>
-//     <Prebuilt />
-//   </div>
-// );
-
-
-
-
 
 export default LandingPage;

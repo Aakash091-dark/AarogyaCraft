@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  FaHome, FaArrowRight, FaCheckCircle,
-  FaBuilding, FaLightbulb, FaHandPointDown
+  FaArrowRight,
+  FaCheckCircle,
+  FaBuilding,
+  FaLightbulb,
 } from 'react-icons/fa';
 import './CustomPage.css';
+import SectionHeader from '../Components/SectionHeader';
 
 const industryIntegrations = {
   Education: ['SMS', 'Cloud', 'AI Automation'],
@@ -24,110 +27,121 @@ const CustomPage = () => {
   };
 
   return (
-    <div className="custom-page fade-in">
-      <h1 className="title">
-        <FaBuilding style={{ marginRight: '10px' }} />
-        Design your own Ecosystem
-      </h1>
+    <div className="custom-page">
+      <SectionHeader
+        title="Design Your Custom Ecosystem"
+        subtitle="Build a solution that's perfectly tailored to your business needs."
+      />
 
-      <p className="disclaimer">
-        Disclaimer: Before visiting custom, we request you to choose first visit prebuilt.
-      </p>
-
-      <form action="https://formspree.io/f/mzzgnzwl" method="POST">
-        <input type="hidden" name="_subject" value="New Custom Ecosystem Submission" />
-        {selectedIndustry && <input type="hidden" name="industry" value={selectedIndustry} />}
-        {selectedIntegrations.map((item, idx) => (
-          <input key={idx} type="hidden" name="integrations[]" value={item} />
-        ))}
-
-        <div className="industry-buttons">
-          {Object.keys(industryIntegrations).map((industry) => (
-            <button
-              key={industry}
-              type="button"
-              className={`details-btn ${selectedIndustry === industry ? 'selected' : ''}`}
-              onClick={() => handleIndustryClick(industry)}
-            >
-              <FaHandPointDown style={{ marginRight: '6px' }} />
-              {industry}
-            </button>
+      <main className="container">
+        <form
+          action="https://formspree.io/f/mzzgnzwl"
+          method="POST"
+          className="custom-form"
+        >
+          <input
+            type="hidden"
+            name="_subject"
+            value="New Custom Ecosystem Submission"
+          />
+          {selectedIndustry && (
+            <input type="hidden" name="industry" value={selectedIndustry} />
+          )}
+          {selectedIntegrations.map((item, idx) => (
+            <input
+              key={idx}
+              type="hidden"
+              name="integrations[]"
+              value={item}
+            />
           ))}
-        </div>
 
-        <div className="input-row">
-          <div className="input-section">
-            <label className="input-label">
-              <FaBuilding style={{ marginRight: '5px' }} />
-              Tell us about your organization
-            </label>
-            <textarea
-              name="organizationInfo"
-              placeholder="Enter organization details..."
-              required
-            />
-          </div>
-
-          <div className="input-section">
-            <label className="input-label">
-              <FaLightbulb style={{ marginRight: '5px' }} />
-              Describe your vision
-            </label>
-            <textarea
-              name="visionInfo"
-              placeholder="Enter your vision..."
-              required
-            />
-          </div>
-        </div>
-
-        {selectedIndustry && (
-          <div className="integration-section">
-            <h3>
-              <FaCheckCircle style={{ marginRight: '8px' }} />
-              Choose services integration
-            </h3>
-            <div className="checkboxes">
-              {industryIntegrations[selectedIndustry].map((service) => (
-                <label key={service} className="checkbox-label">
-                  <input
-                    type="checkbox"
-                    name="visibleCheckbox"
-                    value={service}
-                    checked={selectedIntegrations.includes(service)}
-                    onChange={(e) => {
-                      const { value, checked } = e.target;
-                      setSelectedIntegrations((prev) =>
-                        checked ? [...prev, value] : prev.filter((item) => item !== value)
-                      );
-                    }}
-                  />
-                  {service}
-                </label>
+          <section className="form-section">
+            <h2>1. Select Your Industry</h2>
+            <div className="industry-buttons">
+              {Object.keys(industryIntegrations).map((industry) => (
+                <button
+                  key={industry}
+                  type="button"
+                  className={`industry-btn ${
+                    selectedIndustry === industry ? 'selected' : ''
+                  }`}
+                  onClick={() => handleIndustryClick(industry)}
+                >
+                  {industry}
+                </button>
               ))}
             </div>
+          </section>
+
+          {selectedIndustry && (
+            <>
+              <section className="form-section">
+                <h2>2. Tell Us About Your Business</h2>
+                <div className="input-grid">
+                  <div className="input-group">
+                    <label>
+                      <FaBuilding /> Organization Details
+                    </label>
+                    <textarea
+                      name="organizationInfo"
+                      placeholder="Describe your organization, its size, and primary functions."
+                      rows="5"
+                      required
+                    />
+                  </div>
+                  <div className="input-group">
+                    <label>
+                      <FaLightbulb /> Your Vision
+                    </label>
+                    <textarea
+                      name="visionInfo"
+                      placeholder="What are the goals and objectives you want to achieve with this solution?"
+                      rows="5"
+                      required
+                    />
+                  </div>
+                </div>
+              </section>
+
+              <section className="form-section">
+                <h2>
+                  <FaCheckCircle /> 3. Choose Service Integrations
+                </h2>
+                <div className="checkbox-grid">
+                  {industryIntegrations[selectedIndustry].map((service) => (
+                    <label key={service} className="checkbox-label">
+                      <input
+                        type="checkbox"
+                        value={service}
+                        checked={selectedIntegrations.includes(service)}
+                        onChange={(e) => {
+                          const { value, checked } = e.target;
+                          setSelectedIntegrations((prev) =>
+                            checked
+                              ? [...prev, value]
+                              : prev.filter((item) => item !== value)
+                          );
+                        }}
+                      />
+                      <span>{service}</span>
+                    </label>
+                  ))}
+                </div>
+              </section>
+            </>
+          )}
+
+          <div className="form-actions">
+            <button type="submit" className="btn btn-primary">
+              Submit Your Request <FaArrowRight />
+            </button>
+            <Link to="/prebuilt" className="btn btn-secondary">
+              Explore Pre-built Solutions
+            </Link>
           </div>
-        )}
-
-        <div className="form-buttons">
-          <button type="submit" className="details-btn">
-            <FaArrowRight style={{ marginRight: '6px' }} />
-            Submit
-          </button>
-        </div>
-
-        <div className="form-buttons">
-          <Link to="/prebuilt" className="details-btn gray-btn">
-            <FaArrowRight style={{ marginRight: '6px' }} />
-            Visit Prebuilt Page
-          </Link>
-        </div>
-
-        <Link to="/" className="details-btn gray-btn">
-          <FaHome style={{ marginRight: '6px' }} />
-          Back to Home
-        </Link>
-      </form>
+        </form>
+      </main>
     </div>
   );
 };

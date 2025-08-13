@@ -1,10 +1,9 @@
 
-import React from "react";
-import Card from "./Card";
-import "./Industries.css";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React from 'react';
+import Slider from 'react-slick';
+import './Industries.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 import techImage from '../assets/images/technology.png';
 import EduImage from '../assets/images/education.png';
@@ -12,78 +11,68 @@ import healthImage from '../assets/images/healthcare.png';
 import BankingImage from '../assets/images/banking.png';
 import FinanceImage from '../assets/images/finance.png';
 
-
-
-
 const Industries = () => {
-    const cardsData = [
- 
-        { title: "Technology", imageUrl: techImage },
-        { title: "HealthCare", imageUrl: healthImage },
-        { title: "Banking", imageUrl: BankingImage },
-        { title: "Education", imageUrl: EduImage },
-        { title: "Finance", imageUrl: FinanceImage },
+  const industriesData = [
+    { title: 'Technology', imageUrl: techImage },
+    { title: 'Healthcare', imageUrl: healthImage },
+    { title: 'Banking', imageUrl: BankingImage },
+    { title: 'Education', imageUrl: EduImage },
+    { title: 'Finance', imageUrl: FinanceImage },
+  ];
 
-        
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
 
-    ];
-
-
-//  this is the settings for the slider whuse the react-slick library 
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 2000,
-        autoplaySpeed: 2000,
-        cssEase: "linear",
-
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    };
-
-    return (
-        <div className="card-container">
-            <h1 className="container-heading">Discover Our Exceptional Solutions For Every Industry.</h1>
-            <div className="carousel-wrapper">
-                <Slider {...settings}>
-                    {cardsData.map((card, index) => (
-                        <div key={index} className="card">
-                            <h2 className="card-title">{card.title}</h2>
-                            <img src={card.imageUrl} alt={card.title} className="industry-image" />
-                        </div>
-                    ))}
-                </Slider>
-            </div>
+  return (
+    <div className="industries-section">
+      <div className="container">
+        <h2 className="section-heading">Serving a Wide Range of Industries</h2>
+        <div className="carousel-container">
+          <Slider {...settings}>
+            {industriesData.map((industry, index) => (
+              <div key={index} className="industry-card">
+                <div className="card-image">
+                  <img
+                    src={industry.imageUrl}
+                    alt={industry.title}
+                    className="industry-logo"
+                  />
+                </div>
+                <h3 className="card-title">{industry.title}</h3>
+              </div>
+            ))}
+          </Slider>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Industries;
