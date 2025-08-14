@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Hero from './Hero';
-import Industries from './Industries';
-import './LandingPage.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import Hero from "./Hero";
+import Industries from "./Industries";
+import "./LandingPage.css";
 
 const LandingPage = () => {
   return (
@@ -36,18 +36,6 @@ const LandingPage = () => {
               <li>Rapid Deployment</li>
               <li>Cost-Effective</li>
               <li>Industry-Specific</li>
-            </ul>
-          </div>
-          <div className="feature-card">
-            <h3>Diverse Industry Offerings</h3>
-            <p>
-              From healthcare to finance, we offer specialized solutions to meet
-              the unique challenges of your industry.
-            </p>
-            <ul>
-              <li>Healthcare & Education</li>
-              <li>Retail & Manufacturing</li>
-              <li>Finance & Technology</li>
             </ul>
           </div>
         </section>

@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css';
-import Auth from './Auth';
-import Logo from './Logo';
-import { Account, Client } from 'appwrite';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
+import Auth from "./Auth";
+import Logo from "./Logo";
+import { Account, Client } from "appwrite";
 
 const client = new Client()
-  .setEndpoint('https://nyc.cloud.appwrite.io/v1')
-  .setProject('6886ffec0010e7b19e2a');
+  .setEndpoint("https://nyc.cloud.appwrite.io/v1")
+  .setProject("6886ffec0010e7b19e2a");
 
 const account = new Account(client);
 
 const Navbar = () => {
   const [showIndustriesDropdown, setShowIndustriesDropdown] = useState(false);
   const [showLanguagesDropdown, setShowLanguagesDropdown] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState('Languages');
+  const [selectedLanguage, setSelectedLanguage] = useState("Languages");
   const [menuOpen, setMenuOpen] = useState(false);
   const [showAuthForm, setShowAuthForm] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -24,7 +24,7 @@ const Navbar = () => {
     const checkUser = async () => {
       try {
         const user = await account.get();
-        setLoggedInUser(user.name || user.email.split('@')[0]);
+        setLoggedInUser(user.name || user.email.split("@")[0]);
       } catch (error) {
         // Not logged in
       }
@@ -42,7 +42,7 @@ const Navbar = () => {
   };
 
   const handleLogout = () => {
-    account.deleteSession('current').then(() => {
+    account.deleteSession("current").then(() => {
       setLoggedInUser(null);
       setShowUserOptions(false);
     });
@@ -50,37 +50,21 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`navbar ${showAuthForm ? 'blurred' : ''}`}>
+      <nav className={`navbar ${showAuthForm ? "blurred" : ""}`}>
         <Logo />
 
         <div className="hamburger" onClick={toggleMenu}>
           ☰
         </div>
 
-        <ul className={`nav-links ${menuOpen ? 'show' : ''}`}>
+        <ul className={`nav-links ${menuOpen ? "show" : ""}`}>
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/services">Our Services</Link>
           </li>
-          <li
-            className="dropdown"
-            onMouseEnter={() => setShowIndustriesDropdown(true)}
-            onMouseLeave={() => setShowIndustriesDropdown(false)}
-          >
-            <span className="exper">Expertise</span>
-            <span className="dropdown-icon">▼</span>
-            {showIndustriesDropdown && (
-              <div className="expertizes-dropdown-menu">
-                <div className="expertize-item">Technology</div>
-                <div className="expertize-item">Banking</div>
-                <div className="expertize-item">Education</div>
-                <div className="expertize-item">Finance</div>
-                <div className="expertize-item">Healthcare</div>
-              </div>
-            )}
-          </li>
+
           <li>
             <Link to="/contact">Contact Us</Link>
           </li>
@@ -95,13 +79,13 @@ const Navbar = () => {
             {showLanguagesDropdown && (
               <ul className="dropdown-menu">
                 {[
-                  'English',
-                  'Spanish',
-                  'French',
-                  'Hindi',
-                  'Japanese',
-                  'Urdu',
-                  'German',
+                  "English",
+                  "Spanish",
+                  "French",
+                  "Hindi",
+                  "Japanese",
+                  "Urdu",
+                  "German",
                 ].map((lang) => (
                   <li key={lang} onClick={() => handleLanguageSelect(lang)}>
                     {lang}
