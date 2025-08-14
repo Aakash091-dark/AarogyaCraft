@@ -1,74 +1,83 @@
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import React from 'react';
-import Slider from 'react-slick';
-import './Industries.css';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+// Styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/effect-coverflow";
 
-import techImage from '../assets/images/technology.png';
-import EduImage from '../assets/images/education.png';
-import healthImage from '../assets/images/healthcare.png';
-import BankingImage from '../assets/images/banking.png';
-import FinanceImage from '../assets/images/finance.png';
+// Modules
+import {
+  Autoplay,
+  Pagination,
+  Navigation,
+  EffectCoverflow,
+} from "swiper/modules";
+
+// Local files
+import "./Industries.css";
+import techImage from "../assets/images/technology.png";
+import EduImage from "../assets/images/education.png";
+import healthImage from "../assets/images/healthcare.png";
+import BankingImage from "../assets/images/banking.png";
+import FinanceImage from "../assets/images/finance.png";
 
 const Industries = () => {
   const industriesData = [
-    { title: 'Technology', imageUrl: techImage },
-    { title: 'Healthcare', imageUrl: healthImage },
-    { title: 'Banking', imageUrl: BankingImage },
-    { title: 'Education', imageUrl: EduImage },
-    { title: 'Finance', imageUrl: FinanceImage },
+    { title: "Technology", imageUrl: techImage },
+    { title: "Healthcare", imageUrl: healthImage },
+    { title: "Banking", imageUrl: BankingImage },
+    { title: "Education", imageUrl: EduImage },
+    { title: "Finance", imageUrl: FinanceImage },
   ];
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
 
   return (
     <div className="industries-section">
       <div className="container">
         <h2 className="section-heading">Serving a Wide Range of Industries</h2>
         <div className="carousel-container">
-          <Slider {...settings}>
+          <Swiper
+            effect={"coverflow"}
+            grabCursor={true}
+            centeredSlides={true}
+            loop={false}
+            slidesPerView={"auto"}
+            speed={800}
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+            }}
+            onReachEnd={(swiper) => {
+              setTimeout(() => {
+                swiper.slideTo(0, 800); 
+              }, 1500);
+            }}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 2.5,
+              slideShadows: false,
+            }}
+            modules={[Autoplay, EffectCoverflow]}
+            className="industries-swiper"
+          >
             {industriesData.map((industry, index) => (
-              <div key={index} className="industry-card">
-                <div className="card-image">
-                  <img
-                    src={industry.imageUrl}
-                    alt={industry.title}
-                    className="industry-logo"
-                  />
+              <SwiperSlide key={index} className="industry-slide">
+                <div className="industry-card">
+                  <div className="card-image">
+                    <img
+                      src={industry.imageUrl}
+                      alt={industry.title}
+                      className="industry-logo"
+                    />
+                  </div>
+                  <h3 className="card-title">{industry.title}</h3>
                 </div>
-                <h3 className="card-title">{industry.title}</h3>
-              </div>
+              </SwiperSlide>
             ))}
-          </Slider>
+          </Swiper>
         </div>
       </div>
     </div>
