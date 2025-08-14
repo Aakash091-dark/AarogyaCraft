@@ -1,5 +1,5 @@
 .about-us-page {
-  background-color: var(--secondary-color);
+  background-color: var(--background-color);
   padding-bottom: 4rem;
 }
 
@@ -11,13 +11,13 @@
 .about-content h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--text-color);
+  color: var(--secondary-color);
 }
 
 .about-content p {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #555;
+  color: var(--secondary-color);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -31,10 +31,11 @@
 
 .mission-card,
 .vision-card {
-  background-color: #fff;
+  background-color: var(--background-color);
   padding: 2.5rem;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+  border: 1px solid var(--neutral-light);
 }
 
 .mission-card h3,
@@ -48,7 +49,7 @@
 .vision-card p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #555;
+  color: var(--secondary-color);
 }
 
 .why-choose-us-section {
@@ -58,7 +59,7 @@
 .why-choose-us-section h2 {
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: var(--text-color);
+  color: var(--secondary-color);
 }
 
 .reasons-grid {
@@ -68,11 +69,12 @@
 }
 
 .reason-card {
-  background-color: #fff;
+  background-color: var(--background-color);
   padding: 2rem;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   text-align: left;
+  border: 1px solid var(--neutral-light);
 }
 
 .reason-card h4 {
@@ -84,7 +86,7 @@
 .reason-card p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #555;
+  color: var(--secondary-color);
 }
 
 @media (max-width: 768px) {

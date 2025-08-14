@@ -4,9 +4,9 @@
 }
 
 .logo-text {
-  font-family: var(--heading-font);
+  font-family: var(--font-heading);
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   letter-spacing: -1px;
 }

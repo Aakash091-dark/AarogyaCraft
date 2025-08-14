@@ -1,18 +1,20 @@
 .btn {
   display: inline-block;
   text-decoration: none;
-  color: black;
-  background-color: white;
-  border: 2.2px solid black;
-  padding: 10px 20px;
-  border-radius: 10px;
+  color: var(--background-color);
+  background: var(--primary-color);
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
   transition: all 0.3s ease;
   margin: 15px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--font-size-button);
+  border: none;
 }
 
-/* Hover Button Style */
 .btn:hover {
-  background-color: #007bff;
-  color: white;
-  border: 2.2px solid #007bff;
+  background: linear-gradient(45deg, var(--accent-color), var(--highlight-color));
+  transform: translateY(-2px);
+  color: var(--background-color);
 }

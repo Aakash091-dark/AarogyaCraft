@@ -1,23 +1,23 @@
 .custom-page {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: var(--primary-color);
   padding: 4rem 1rem;
   font-family: 'Poppins', sans-serif;
 }
 
 .custom-form {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--neutral-light);
   backdrop-filter: blur(10px);
   padding: 3rem;
   border-radius: 16px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
   max-width: 950px;
   margin: 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #eee;
 }
 
 .form-section {
   margin-bottom: 3rem;
-  border-bottom: 1px solid #dce3ec;
+  border-bottom: 1px solid var(--neutral-medium);
   padding-bottom: 2.5rem;
 }
 
@@ -30,7 +30,7 @@
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  color: #2c3e50;
+  color: var(--primary-color);
   text-align: center;
 }
 
@@ -45,7 +45,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #34495e;
+  color: var(--primary-color);
 }
 
 .industry-dropdown,
@@ -54,9 +54,10 @@
   width: 100%;
   padding: 14px 18px;
   font-size: 1rem;
-  border: 1px solid #bdc3c7;
+  border: 1px solid var(--neutral-medium);
   border-radius: 8px;
-  background-color: #fff;
+  background-color: var(--primary-color);
+  color: var(--neutral-light);
   transition: all 0.3s ease;
 }
 
@@ -64,8 +65,8 @@
 .email-input:focus,
 .input-group textarea:focus {
   outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  border-color: var(--highlight-color);
+  box-shadow: 0 0 8px rgba(255, 211, 105, 0.2);
 }
 
 .input-grid {
@@ -87,10 +88,10 @@
 .integration-category h3 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--secondary-color);
 }
 
 .checkbox-grid {
@@ -103,19 +104,20 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  background-color: #ffffff;
+  background-color: var(--primary-color);
   padding: 14px;
   border-radius: 8px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--neutral-medium);
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  color: var(--neutral-light);
 }
 
 .checkbox-label:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  border-color: var(--primary-color);
+  border-color: var(--highlight-color);
 }
 
 .checkbox-label input[type='checkbox'] {
@@ -142,7 +144,7 @@
   -webkit-appearance: none;
   appearance: none;
   height: 8px;
-  background: #ddd;
+  background: var(--neutral-medium);
   border-radius: 5px;
   outline: none;
 }
@@ -152,16 +154,16 @@
   appearance: none;
   width: 22px;
   height: 22px;
-  background: var(--primary-color);
+  background: var(--secondary-color);
   border-radius: 50%;
   cursor: pointer;
 }
 
 .summary-card {
-  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+  background: linear-gradient(135deg, var(--highlight-color) 0%, var(--secondary-color) 100%);
   padding: 2rem;
   border-radius: 12px;
-  border-left: 6px solid var(--primary-color);
+  border-left: 6px solid var(--secondary-color);
   text-align: center;
 }
 
@@ -173,7 +175,7 @@
 .summary-card .price-estimate {
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--neutral-light);
 }
 
 .cta-section {
@@ -182,7 +184,7 @@
 
 .cta-section p {
   font-size: 1.1rem;
-  color: #555;
+  color: var(--neutral-medium);
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
@@ -196,8 +198,8 @@
 }
 
 .btn-primary {
-  background: linear-gradient(45deg, var(--primary-color), #0056b3);
-  color: #fff;
+  background: linear-gradient(45deg, var(--secondary-color), var(--highlight-color));
+  color: var(--neutral-light);
   padding: 16px 32px;
   font-size: 1.2rem;
   font-weight: 600;
@@ -205,10 +207,10 @@
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+  box-shadow: 0 5px 15px rgba(47, 133, 90, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 86, 179, 0.4);
+  box-shadow: 0 8px 20px rgba(233, 69, 96, 0.4);
 }

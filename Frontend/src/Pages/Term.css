@@ -1,16 +1,24 @@
 .term-container{
     max-width: 1200px;
     margin: auto;
+    padding: 2rem;
+    background-color: var(--neutral-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
 .term-container h2{
     font-size: 1.8rem;
     text-align: left;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
 }
 
 .points p{
     font-size: 1.2rem;
     text-align: left;
+    color: var(--neutral-medium);
+    line-height: 1.6;
 }
 
 
