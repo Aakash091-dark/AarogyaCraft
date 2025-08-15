@@ -11,13 +11,13 @@
 .about-content h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .about-content p {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -31,7 +31,7 @@
 
 .mission-card,
 .vision-card {
-  background-color: var(--background-color);
+  background-color: var(--primary-color);
   padding: 2.5rem;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
@@ -42,14 +42,14 @@
 .vision-card h3 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: var(--primary-color);
+  color: var(--background-color);
 }
 
 .mission-card p,
 .vision-card p {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--secondary-color);
+  color: var(--background-color);
 }
 
 .why-choose-us-section {
@@ -59,7 +59,7 @@
 .why-choose-us-section h2 {
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .reasons-grid {
@@ -69,7 +69,7 @@
 }
 
 .reason-card {
-  background-color: var(--background-color);
+  background-color: var(--primary-color);
   padding: 2rem;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
@@ -80,13 +80,13 @@
 .reason-card h4 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  color: var(--primary-color);
+  color: var(--background-color);
 }
 
 .reason-card p {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--secondary-color);
+  color: var(--background-color);
 }
 
 @media (max-width: 768px) {

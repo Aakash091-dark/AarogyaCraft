@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400&family=Cormorant+Garamond:ital@1&display=swap');
 
 :root {
-  /* Color Palette (Minimal + Premium Light) */
-  --primary-color: #0A2540; /* Deep Blue – premium text/buttons */
-  --secondary-color: #2D2D2D; /* Charcoal – headings contrast */
-  --background-color: #FFFFFF; /* Clean White – luxury minimal base */
-  --accent-color: #6C63FF; /* Royal Violet – modern premium highlight */
-  --highlight-color: #F5C518; /* Rich Gold – luxury CTA / hover */
-  --neutral-light: #EAEAEA; /* light gray */
-  --neutral-medium: #8A8A8A; /* subtle text */
+  /* New Color Palette */
+  --primary-color: #ADD8E6;   /* Light Blue */
+  --secondary-color: #000000;   /* Black */
+  --background-color: #FFFFFF; /* White */
+  --accent-color: #87CEEB;     /* Sky Blue */
+  --highlight-color: #00BFFF;   /* Deep Sky Blue */
+  --neutral-light: #F0F8FF;     /* Alice Blue */
+  --neutral-medium: #A9A9A9; /* Dark Gray */
+  --secondary-accent: #D3D3D3; /* Light Gray */
 
   /* Typography */
   --font-heading: 'Montserrat', sans-serif;
@@ -16,15 +17,15 @@
   --font-accent: 'Cormorant Garamond', serif;
 
   /* Font Sizes */
-  --font-size-hero: 56px;
-  --font-size-title: 32px;
-  --font-size-body: 18px;
-  --font-size-button: 16px;
-  --font-size-small: 15px;
+  --font-size-hero: 48px;
+  --font-size-title: 28px;
+  --font-size-body: 16px;
+  --font-size-button: 14px;
+  --font-size-small: 12px;
 
   /* UI Elements */
-  --border-radius: 16px;
-  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --border-radius: 12px;
+  --box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 body {
@@ -36,6 +37,7 @@ body {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -68,17 +70,17 @@ button {
   cursor: pointer;
   border: none;
   border-radius: var(--border-radius);
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: var(--font-size-button);
-  background: var(--primary-color);
-  color: var(--background-color);
-  transition: background 0.3s ease, transform 0.2s ease;
+  background: var(--accent-color);
+  color: var(--neutral-light);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background: linear-gradient(45deg, var(--accent-color), var(--highlight-color));
+  background-color: var(--highlight-color);
   transform: translateY(-2px);
 }
 
@@ -90,11 +92,11 @@ button:hover {
 }
 
 .card {
-  background-color: var(--background-color);
+  background-color: var(--neutral-light);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   padding: 24px;
-  border: 1px solid var(--neutral-light);
+  border: 1px solid var(--secondary-accent);
 }
 
 hr.divider {

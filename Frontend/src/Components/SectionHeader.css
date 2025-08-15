@@ -1,6 +1,6 @@
 .section-header {
-  background-color: var(--secondary-color);
-  color: var(--neutral-light);
+  background-color: var(--primary-color);
+  color: var(--background-color);
   text-align: center;
   padding: 4rem 2rem;
   margin-bottom: 4rem;

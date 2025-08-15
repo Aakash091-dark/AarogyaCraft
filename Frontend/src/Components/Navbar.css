@@ -2,11 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  background-color: var(--background-color);
-  border-bottom: 1px solid var(--neutral-light);
+  padding: 20px 40px;
+  background-color: var(--neutral-light);
+  border-bottom: 1px solid var(--secondary-accent);
   font-family: var(--font-heading);
-  box-shadow: var(--box-shadow);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
   z-index: 999;
@@ -36,8 +36,8 @@
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--accent-color);
-  border-bottom: 2px solid var(--accent-color);
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
 }
 
 .dropdown {
@@ -65,7 +65,7 @@
   top: 150%;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--background-color);
+  background: var(--neutral-light);
   padding: 15px;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
@@ -76,7 +76,7 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  border: 1px solid var(--neutral-light);
+  border: 1px solid var(--secondary-accent);
 }
 
 .dropdown:hover .expertizes-dropdown-menu {
@@ -92,8 +92,8 @@
 }
 
 .expertize-item:hover {
-  background: var(--neutral-light);
-  color: var(--primary-color);
+  background: var(--secondary-accent);
+  color: var(--secondary-color);
 }
 
 .language-container {
@@ -111,7 +111,7 @@
   position: absolute;
   top: 150%;
   right: 0;
-  background: var(--background-color);
+  background: var(--neutral-light);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   list-style: none;
@@ -120,7 +120,7 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  border: 1px solid var(--neutral-light);
+  border: 1px solid var(--secondary-accent);
 }
 
 .language-container:hover .dropdown-menu {
@@ -135,14 +135,14 @@
 }
 
 .dropdown-menu li:hover {
-  background: var(--neutral-light);
-  color: var(--primary-color);
+  background: var(--secondary-accent);
+  color: var(--secondary-color);
 }
 
 .aarogya-login-button {
   padding: 10px 25px;
   background: var(--primary-color);
-  color: var(--background-color);
+  color: var(--neutral-light);
   border: none;
   border-radius: var(--border-radius);
   font-size: 1rem;
@@ -151,7 +151,7 @@
 }
 
 .aarogya-login-button:hover {
-  background: linear-gradient(45deg, var(--accent-color), var(--highlight-color));
+  background: var(--highlight-color);
   transform: translateY(-2px);
 }
 
@@ -167,7 +167,7 @@
   position: absolute;
   top: 150%;
   right: 0;
-  background: var(--background-color);
+  background: var(--neutral-light);
   border-radius: var(--border-radius);
   list-style: none;
   padding: 5px 0;
@@ -177,7 +177,7 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  border: 1px solid var(--neutral-light);
+  border: 1px solid var(--secondary-accent);
 }
 
 .aarogya-username:hover .user-options {
@@ -192,8 +192,8 @@
 }
 
 .user-options li:hover {
-  background: var(--neutral-light);
-  color: var(--primary-color);
+  background: var(--secondary-accent);
+  color: var(--secondary-color);
 }
 
 .blurred {
@@ -212,11 +212,11 @@
     display: block;
   }
 
-  .nav-links {
+.nav-links {
     display: none;
     flex-direction: column;
     align-items: center;
-    background: var(--background-color);
+    background: var(--secondary-color);
     position: absolute;
     top: 60px;
     right: 0;

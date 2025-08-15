@@ -2,7 +2,7 @@
 
 .industries-section {
   padding: 4rem 2rem;
-  background-color: var(--primary-color);
+  background-color: var(--background-color);
   overflow: hidden; /* Prevent horizontal scrollbars from appearing */
 }
 
@@ -10,7 +10,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: var(--neutral-light);
+  color: var(--secondary-color);
 }
 
 .carousel-container {
@@ -74,7 +74,7 @@
 .card-title {
   font-size: 1.2rem;
   font-weight: 500;
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 /* --- Swiper Customization --- */

@@ -7,6 +7,6 @@
   font-family: var(--font-heading);
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   letter-spacing: -1px;
 }

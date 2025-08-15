@@ -1,11 +1,11 @@
 .policy-page {
-  background-color: var(--primary-color);
+  background-color: var(--background-color);
   padding-bottom: 4rem;
 }
 
 .policy-header {
-  background-color: var(--secondary-color);
-  color: var(--neutral-light);
+  background-color: var(--primary-color);
+  color: var(--background-color);
   text-align: center;
   padding: 4rem 2rem;
   margin-bottom: 4rem;
@@ -22,7 +22,7 @@
 }
 
 .policy-content {
-  background-color: var(--neutral-light);
+  background-color: var(--primary-color);
   padding: 3rem;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
@@ -35,15 +35,15 @@
 .policy-content h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--secondary-color);
+  color: var(--background-color);
+  border-bottom: 2px solid var(--background-color);
   padding-bottom: 0.5rem;
 }
 
 .policy-content p {
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--neutral-medium);
+  color: var(--background-color);
 }
 
 .policy-content ul {

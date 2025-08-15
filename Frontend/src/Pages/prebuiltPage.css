@@ -1,8 +1,8 @@
 /* Section */
 .pricing-section {
   padding: 80px 20px;
-  background: var(--primary-color);
-  color: var(--neutral-light);
+  background: var(--background-color);
+  color: var(--primary-color);
   text-align: center;
   font-family: "Inter", sans-serif;
 }
@@ -11,12 +11,12 @@
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 10px;
-  color: var(--neutral-light);
+  color: var(--primary-color);
 }
 
 .section-subtitle {
   font-size: 1.2rem;
-  color: var(--neutral-medium);
+  color: var(--primary-color);
   margin-bottom: 60px;
 }
 
@@ -31,11 +31,11 @@
 
 /* Card */
 .pricing-card {
-  background: var(--neutral-light);
+  background: var(--primary-color);
   border-radius: 20px;
   padding: 40px 25px;
   backdrop-filter: blur(15px);
-  border: 1px solid #eee;
+  border: 1px solid var(--secondary-accent);
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -57,7 +57,7 @@
   top: 15px;
   left: 15px;
   background: linear-gradient(90deg, var(--secondary-color), var(--highlight-color));
-  color: var(--neutral-light);
+  color: var(--primary-color);
   font-size: 0.85rem;
   padding: 6px 12px;
   border-radius: 999px;
@@ -91,7 +91,7 @@
   margin-bottom: 10px;
   position: relative;
   padding-left: 25px;
-  color: var(--primary-color);
+  color: var(--background-color);
 }
 
 .feature-list li::before {
@@ -110,7 +110,7 @@
   padding: 12px 20px;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--neutral-light);
+  color: var(--primary-color);
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;

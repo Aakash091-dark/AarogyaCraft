@@ -1,6 +1,6 @@
 .contact-container {
   padding: 4rem 0;
-  background-color: var(--primary-color);
+  background-color: var(--background-color);
 }
 
 .contact-content {
@@ -22,7 +22,7 @@
 .contact-info p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: var(--neutral-medium);
+  color: var(--secondary-color);
   margin-bottom: 2rem;
 }
 
@@ -33,12 +33,12 @@
 .info-item h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .info-item p {
   font-size: 1rem;
-  color: var(--neutral-medium);
+  color: var(--secondary-color);
   margin: 0;
 }
 
@@ -56,8 +56,8 @@
   border-radius: var(--border-radius);
   font-size: 1rem;
   font-family: var(--font-body);
-  background-color: var(--primary-color);
-  color: var(--neutral-light);
+  background-color: var(--neutral-light);
+  color: var(--secondary-color);
 }
 
 .contact-form input:focus,
