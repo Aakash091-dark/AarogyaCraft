@@ -1,7 +1,19 @@
 .custom-page {
-  background: var(--background-color);
+  background: linear-gradient(135deg, var(--background-color), var(--background-color));
   padding: 4rem 1rem;
   font-family: 'Poppins', sans-serif;
+  color: black;
+}
+
+.custom-page h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.custom-page .subtitle {
+  color: black !important;
 }
 
 .custom-form {
@@ -27,11 +39,12 @@
 }
 
 .form-section h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: var(--font-size-title);
+  font-weight: 600;
   margin-bottom: 2rem;
-  color: var(--background-color);
+  color: black;
   text-align: center;
+  line-height: 1.2;
 }
 
 .input-group {
@@ -45,7 +58,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--background-color);
+  color: black;
 }
 
 .industry-dropdown,
@@ -57,7 +70,7 @@
   border: 1px solid var(--neutral-medium);
   border-radius: 8px;
   background-color: var(--background-color);
-  color: var(--primary-color);
+  color: black;
   transition: all 0.3s ease;
 }
 
@@ -66,13 +79,57 @@
 .input-group textarea:focus {
   outline: none;
   border-color: var(--highlight-color);
-  box-shadow: 0 0 8px rgba(255, 211, 105, 0.2);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* === Business Details Cards Styling === */
+.input-grid .input-group {
+  background-color: #f9f9f9; /* light card background */
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--neutral-medium);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-grid .input-group:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.input-grid .input-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #1E3A8A; /* Blue label for icons */
+}
+
+.input-grid .input-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1rem;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border: 1px solid var(--neutral-medium);
+  background-color: #ffffff; 
+  resize: vertical;
+  min-height: 150px;
+  transition: all 0.3s ease;
+}
+
+.input-grid .input-group textarea:focus {
+  outline: none;
+  border-color: #0897da; 
+  box-shadow: 0 0 10px rgba(8, 151, 218, 0.2);
 }
 
 .input-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 2.5rem; /* space between cards */
 }
 
 @media (min-width: 768px) {
@@ -88,10 +145,10 @@
 .integration-category h3 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: var(--background-color);
+  color: #1E3A8A; 
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
-  border-bottom: 2px solid var(--background-color);
+  border-bottom: 2px solid #1E3A8A;
 }
 
 .checkbox-grid {
@@ -111,13 +168,18 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  color: var(--primary-color);
+  color: #1E3A8A; /* Blue text */
 }
 
 .checkbox-label:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  border-color: var(--highlight-color);
+  border-color: rgb(0, 195, 255);
+}
+
+.checkbox-label input[type='checkbox']:checked + span {
+  color: black;
+  font-weight: 600;
 }
 
 .checkbox-label input[type='checkbox'] {
@@ -160,11 +222,12 @@
 }
 
 .summary-card {
-  background: linear-gradient(135deg, var(--highlight-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(135deg, var(--background-color), var(--background-color));
   padding: 2rem;
   border-radius: 12px;
   border-left: 6px solid var(--background-color);
   text-align: center;
+  color: var(--primary-color);
 }
 
 .summary-card p {
@@ -175,16 +238,26 @@
 .summary-card .price-estimate {
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: black;
 }
 
 .cta-section {
   text-align: center;
 }
 
+.label-blue {
+  color: #0897da; 
+  font-weight: 600; 
+}
+
+.count-label{
+  color: #0897da;
+  font-weight: 600;
+}
+
 .cta-section p {
   font-size: 1.1rem;
-  color: var(--background-color);
+  color: var(--secondary-color);
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
@@ -195,22 +268,36 @@
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .btn-primary {
-  background: linear-gradient(45deg, var(--secondary-color), var(--highlight-color));
-  color: var(--primary-color);
+  background: linear-gradient(135deg, gray,rgb(44, 216, 255));
+  color: black;
   padding: 16px 32px;
   font-size: 1.2rem;
   font-weight: 600;
   border: none;
   border-radius: 50px;
   cursor: pointer;
+  margin-bottom: 2rem;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(47, 133, 90, 0.3);
+  box-shadow: 0 5px 15px rgba(103, 167, 228, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(233, 69, 96, 0.4);
+  box-shadow: 0 8px 20px rgba(4, 4, 4, 0.4);
+}
+
+@media (max-width: 992px) {
+  .custom-form {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .form-section h2 {
+    font-size: 2.5rem;
+  }
 }

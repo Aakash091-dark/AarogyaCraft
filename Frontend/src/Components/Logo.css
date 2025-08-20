@@ -1,12 +1,13 @@
 .logo-container {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
-.logo-text {
-  font-family: var(--font-heading);
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  letter-spacing: -1px;
+.logo-image {
+  height: 20px;       /* adjust this to match your navbar */
+  width: auto;        /* keeps aspect ratio */
+  object-fit: contain;
+  background: transparent; /* ensures no background */
+  display: block;
 }

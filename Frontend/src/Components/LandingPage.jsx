@@ -42,14 +42,14 @@ const LandingPage = () => {
 
         <section className="cta-section">
           <h2>Ready to Get Started?</h2>
-          <p>
+          <p className="cta-text">
             Explore our solutions and find the perfect fit for your business.
           </p>
           <div className="cta-buttons">
-            <Link to="/custom" className="btn btn-primary">
+            <Link to="/custom" className="first-btn">
               Build a Custom Solution
             </Link>
-            <Link to="/prebuilt" className="btn btn-secondary">
+            <Link to="/prebuilt" className="second-btn">
               Explore Pre-built Options
             </Link>
           </div>

@@ -2,8 +2,10 @@
 
 .industries-section {
   padding: 4rem 2rem;
-  background-color: var(--background-color);
-  overflow: hidden; /* Prevent horizontal scrollbars from appearing */
+  background-color: var(--neutral-light); /* changed to match landing page component background */
+  border-radius: var(--border-radius); /* optional, like landing page cards */
+  box-shadow: var(--box-shadow);       /* optional, for same styling */
+  overflow: hidden;
 }
 
 .section-heading {
@@ -22,12 +24,12 @@
 .mySwiper {
   width: 100%;
   height: auto;
-  padding: 20px 0; /* Gives space for the card's hover effect */
+  padding: 20px 0;
 }
 
 .swiper-wrapper {
-  display: flex; /* This is the critical line that forces slides into a row */
-  align-items: stretch; /* Ensures all slides have the same height */
+  display: flex;
+  align-items: stretch;
 }
 
 .swiper-slide {
@@ -67,8 +69,8 @@
 }
 
 .industry-logo {
-  max-width: 60px;
-  max-height: 60px;
+  max-width: 120px;
+  max-height: 120px;
 }
 
 .card-title {
@@ -78,10 +80,9 @@
 }
 
 /* --- Swiper Customization --- */
-
 .swiper-pagination {
-  position: static !important; /* Position dots below the slider */
-  margin-top: 2rem; /* Space between slider and dots */
+  position: static !important;
+  margin-top: 2rem;
 }
 
 .swiper-pagination-bullet {
@@ -91,11 +92,10 @@
 .swiper-button-prev,
 .swiper-button-next {
   color: var(--secondary-color) !important;
-  top: 50%; /* Center vertically */
+  top: 50%;
   transform: translateY(-50%);
 }
 
-/* Position navigation buttons just outside the main carousel */
 .swiper-button-prev {
   left: -15px;
 }
@@ -104,7 +104,6 @@
   right: -15px;
 }
 
-/* On smaller screens, bring buttons inside */
 @media (max-width: 768px) {
   .swiper-button-prev {
     left: 5px;
@@ -114,7 +113,6 @@
   }
 }
 
-/* Keep your existing CSS and add these for the effect */
 .industries-swiper {
   padding: 40px 0;
 }
@@ -130,11 +128,6 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   text-align: center;
   padding: 50px;
-}
-
-.industry-logo {
-  max-width: 120px;
-  max-height: 120px;
 }
 
 .industries-swiper .swiper-wrapper {

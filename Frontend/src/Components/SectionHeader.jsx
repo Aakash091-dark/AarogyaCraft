@@ -6,7 +6,7 @@ const SectionHeader = ({ title, subtitle }) => {
     <header className="section-header">
       <div className="container">
         <h1>{title}</h1>
-        <p>{subtitle}</p>
+        <p className="subtitle">{subtitle}</p> {/* Added class here */}
       </div>
     </header>
   );

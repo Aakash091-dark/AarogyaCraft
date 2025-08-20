@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Footer.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Footer.css";
 
 const Footer = () => {
   return (
@@ -10,7 +10,11 @@ const Footer = () => {
           <div className="footer-about">
             <h3>AarogyaCraft</h3>
             <p>
-              Streamlining operations for a brighter, more efficient future.
+              Streamlining operations
+              <br />
+              for a brighter, more
+              <br />
+              efficient future.
             </p>
           </div>
           <div className="footer-links">
@@ -47,23 +51,41 @@ const Footer = () => {
           <div className="footer-social">
             <h4>Follow Us</h4>
             <div className="social-icons">
-              <a href="https://www.instagram.com/aaorgyacraft/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.instagram.com/aaorgyacraft/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-facebook"></i>
               </a>
-              <a href="https://www.linkedin.com/in/aarogya-craft-471011341/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com/in/aarogya-craft-471011341/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-linkedin"></i>
               </a>
-              <a href="https://github.com/Aakash091-dark/AarogyaCraft" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/Aakash091-dark/AarogyaCraft"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-github"></i>
               </a>
             </div>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} AarogyaCraft. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} AarogyaCraft. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

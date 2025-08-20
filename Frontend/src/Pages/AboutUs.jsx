@@ -43,7 +43,7 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <section className="why-choose-us-section">
+        <section className="why-choose-us-section"> 
           <h2>Why Choose Us?</h2>
           <div className="reasons-grid">
             <div className="reason-card">

@@ -1,5 +1,5 @@
-import React from 'react';
-import './prebuiltPage.css';
+import React from "react";
+import "./prebuiltPage.css";
 
 const plans = [
   {
@@ -61,30 +61,40 @@ const plans = [
 ];
 
 const PrebuiltPage = () => {
-  return (
+  return ( 
     <section className="pricing-section">
-      <h2 className="section-title">🚀 Choose the Right Plan for Your Growth</h2>
-      <p className="section-subtitle">Flexible pricing that scales with your business</p>
-
-      <div className="pricing-wrapper">
-        {plans.map((plan, index) => (
-          <div
-            key={index}
-            className={`pricing-card ${plan.highlight ? "highlight" : ""}`}
-          >
-            {plan.highlight && <span className="popular-badge">⭐ Most Popular</span>}
-            <h3 className="plan-title">{plan.name}</h3>
-            <p className="plan-price">{plan.price}</p>
-            <ul className="feature-list">
-              {plan.features.map((feature, i) => (
-                <li key={i}>{feature}</li>
-              ))}
-            </ul>
-            <button className="cta-btn">
-              {plan.highlight ? "Start with Intermediate" : "Get Started"}
-            </button>
-          </div>
-        ))}
+      <div className="section-header">
+      <h2 className="section-title">
+        🚀 Choose the Right Plan for Your Growth
+      </h2>
+      <p className="section-subtitle">
+        Flexible pricing that scales with your business
+      </p>
+      </div>
+      {/* Wrapper card containing all pricing cards */}
+      <div className="pricing-card-wrapper">
+        <div className="pricing-wrapper">
+          {plans.map((plan, index) => (
+            <div
+              key={index}
+              className={`pricing-card ${plan.highlight ? "highlight" : ""}`}
+            >
+              {plan.highlight && (
+                <span className="popular-badge">⭐ Most Popular</span>
+              )}
+              <h3 className="plan-title">{plan.name}</h3>
+              <p className="plan-price">{plan.price}</p>
+              <ul className="feature-list">
+                {plan.features.map((feature, i) => (
+                  <li key={i}>{feature}</li>
+                ))}
+              </ul>
+              <button className="cta-btn">
+                {plan.highlight ? "Start with Intermediate" : "Get Started"}
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

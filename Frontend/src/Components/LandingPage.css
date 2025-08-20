@@ -2,6 +2,7 @@
   padding-top: 2rem;
 }
 
+/* Solutions Overview */
 .solutions-overview {
   text-align: center;
   margin-bottom: 4rem;
@@ -21,6 +22,7 @@
   line-height: 1.6;
 }
 
+/* Features Grid */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -28,6 +30,7 @@
   margin-bottom: 4rem;
 }
 
+/* Feature Card */
 .feature-card {
   background-color: var(--neutral-light);
   padding: 2rem;
@@ -39,8 +42,8 @@
 }
 
 .feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+transform: rotateX(0deg) rotateY(0deg) scale(1.02);
+  box-shadow: 0 35px 70px rgba(0,0,0,0.25);
 }
 
 .feature-card h3 {
@@ -76,63 +79,75 @@
   font-weight: bold;
 }
 
+/* ---------------- CTA SECTION ---------------- */
 .cta-section {
   text-align: center;
-  padding: 4rem 0;
+  padding: 4rem 2rem;
   background-color: var(--neutral-light);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  border-radius: 25px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2); /* always lifted 3D */
   border: 1px solid var(--secondary-accent);
+  transform-style: preserve-3d; /* 3D effect */
+  perspective: 1200px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Default 3D tilt for the section */
+.cta-section {
+  transform: rotateX(2deg) rotateY(2deg);
+}
+
+.cta-section:hover {
+  transform: rotateX(0deg) rotateY(0deg) scale(1.02);
+  box-shadow: 0 35px 70px rgba(0,0,0,0.25);
 }
 
 .cta-section h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
-  color: var(--secondary-color);
+  color: black;
 }
 
-.cta-section p {
+.cta-section .cta-text {
+  color: black;
   font-size: 1.1rem;
-  color: var(--secondary-color);
   margin-bottom: 2rem;
 }
 
+/* CTA Buttons */
 .cta-buttons {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
 }
 
-.btn {
-  padding: 12px 30px;
-  border-radius: var(--border-radius);
-  text-decoration: none;
-  font-weight: 500;
+.first-btn,
+.second-btn {
+  background: linear-gradient(135deg, gray, rgb(44, 216, 255));
+  border: none;
+  border-radius: 8px;       
+  padding: 8px 14px;        
+  font-size: 1.1rem;        
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
   transition: all 0.3s ease;
+  width: 200px;    
+  height: 50px;          
+  min-width: 100px;        
+  position: relative;
+  overflow: hidden;
 }
 
-.btn-primary {
-  background-color: var(--primary-color);
-  color: var(--neutral-light);
+.first-btn:hover,
+.second-btn:hover {
+  background: white;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
-.btn-primary:hover {
-  background-color: var(--highlight-color);
-  color: var(--neutral-light);
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: var(--secondary-color);
-  border: 2px solid var(--secondary-color);
-}
-
-.btn-secondary:hover {
-  background-color: var(--secondary-color);
-  color: var(--neutral-light);
-}
-
+/* ---------------- MEDIA QUERIES ---------------- */
 @media (max-width: 768px) {
   .solutions-overview h2 {
     font-size: 2rem;

@@ -1,27 +1,29 @@
-import React from 'react';
-import './Terms.css';
+import React from "react";
+import "./Terms.css";
 
 const Terms = () => {
   return (
     <div className="policy-page">
-      <header className="policy-header">
+      {/* Header Card */}
+      <div className="heading">
         <div className="container">
           <h1>Terms & Conditions</h1>
           <p>Last updated: August 13, 2025</p>
         </div>
-      </header>
+      </div>
 
+      {/* Terms Content */}
       <main className="container policy-content">
-        <section>
+        <div className="term-card">
           <h2>1. Introduction</h2>
           <p>
             Welcome to AarogyaCraft. These Terms and Conditions govern your use
             of our website and services. By accessing or using our services, you
             agree to be bound by these terms.
           </p>
-        </section>
+        </div>
 
-        <section>
+        <div className="term-card">
           <h2>2. Use of Our Services</h2>
           <p>
             You may use our services only as permitted by law. We may suspend or
@@ -29,16 +31,14 @@ const Terms = () => {
             terms or policies.
           </p>
           <ul>
-            <li>
-              You must be at least 18 years old to use our services.
-            </li>
+            <li>You must be at least 18 years old to use our services.</li>
             <li>
               You are responsible for safeguarding your account information.
             </li>
           </ul>
-        </section>
+        </div>
 
-        <section>
+        <div className="term-card">
           <h2>3. Intellectual Property</h2>
           <p>
             All content and materials available on our website, including but
@@ -46,25 +46,25 @@ const Terms = () => {
             of AarogyaCraft and are protected by applicable intellectual
             property laws.
           </p>
-        </section>
+        </div>
 
-        <section>
+        <div className="term-card">
           <h2>4. Limitation of Liability</h2>
           <p>
             To the fullest extent permitted by law, AarogyaCraft shall not be
             liable for any indirect, incidental, special, consequential, or
             punitive damages, or any loss of profits or revenues.
           </p>
-        </section>
+        </div>
 
-        <section>
+        <div className="term-card">
           <h2>5. Changes to Terms</h2>
           <p>
-            We may modify these terms at any time. We will post the most
-            current version of these terms on our website. By continuing to use
-            our services, you agree to be bound by the revised terms.
+            We may modify these terms at any time. We will post the most current
+            version of these terms on our website. By continuing to use our
+            services, you agree to be bound by the revised terms.
           </p>
-        </section>
+        </div>
       </main>
     </div>
   );

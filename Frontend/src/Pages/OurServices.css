@@ -1,7 +1,7 @@
 .services-section {
   padding: 80px 20px;
   background: var(--background-color);
-  color: var(--primary-color);
+  color: black;
   text-align: center;
   font-family: "Inter", sans-serif;
 }
@@ -10,45 +10,56 @@
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 10px;
-  color: var(--primary-color);
+  color: #029aff !important;
 }
 
 .section-subtitle {
   font-size: 1.2rem;
-  color: var(--primary-color);
+  color: #000000 !important; 
+  font-weight: 600;
+  font-size: x-large !important;
   margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
+/* Wrapper with 2 cards per row */
 .services-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(2, 1fr); /* exactly 2 cards per row */
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   perspective: 1000px;
 }
 
+/* Flip Card Container */
 .service-card-new {
   background-color: transparent;
   height: 400px;
-  border-radius: 20px;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+  border-radius: var(--border-radius);
+  perspective: 1000px; /* ensure 3D flip works */
+  position: relative; /* important so inner cards don't overlap */
 }
 
+/* Inner card for flip */
 .service-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.8s;
+  transition: transform 0.8s ease;
   transform-style: preserve-3d;
+  border-radius: var(--border-radius);
 }
 
 .service-card-new:hover .service-card-inner {
   transform: rotateY(180deg);
 }
 
+/* Card Faces */
 .service-card-front,
 .service-card-back {
   position: absolute;
@@ -56,53 +67,72 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--secondary-accent);
+  box-sizing: border-box; /* prevents overflow */
 }
 
+/* Front Side */
 .service-card-front {
-  background: var(--primary-color);
-  border: 1px solid var(--neutral-light);
-  backdrop-filter: blur(15px);
+  background: var(--neutral-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.service-card-front:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Back Side */
 .service-card-back {
-  background-color: var(--secondary-color);
+  background-color: var(--neutral-light);
   transform: rotateY(180deg);
-  padding: 20px;
-  color: var(--background-color);
-}
-
-.service-card-back-content {
-  background: var(--secondary-color);
-  padding: 20px;
-  border-radius: 10px;
-  height: 100%;
-  width: 100%;
+  color: var(--secondary-color);
   overflow-y: auto;
 }
 
+/* Back Content */
+.service-card-back-content {
+  background: var(--neutral-light);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  border: 1px solid var(--secondary-accent);
+  box-sizing: border-box;
+}
+
+/* Icon */
 .service-icon-new {
-  font-size: 4rem;
-  color: var(--accent-color);
-  margin-bottom: 20px;
+  font-size: 3.5rem;
+  color: var(--highlight-color);
+  margin-bottom: 1rem;
 }
 
+/* Title */
 .service-title-new {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
 }
 
+/* Description */
 .service-description-new {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
 }
 
+/* Features */
 .service-features-new {
   list-style: none;
   padding: 0;
@@ -110,15 +140,39 @@
 }
 
 .service-features-new li {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   margin-bottom: 8px;
   position: relative;
-  padding-left: 20px;
+  padding-left: 25px;
+  color: var(--secondary-color);
 }
 
 .service-features-new li::before {
   content: "✔";
   position: absolute;
   left: 0;
-  color: var(--accent-color);
+  color: var(--highlight-color);
+  font-weight: bold;
+}
+
+/* ---------------- MEDIA QUERIES ---------------- */
+@media (max-width: 992px) {
+  .services-wrapper {
+    grid-template-columns: 1fr; /* stack cards on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
+  .service-card-new {
+    height: 350px;
+  }
 }

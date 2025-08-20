@@ -1,46 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   FaArrowRight,
   FaBuilding,
   FaLightbulb,
   FaMoneyBillWave,
   FaEnvelope,
-} from 'react-icons/fa';
-import './CustomPage.css';
-import SectionHeader from '../Components/SectionHeader';
+} from "react-icons/fa";
+import "./CustomPage.css";
+import SectionHeader from "../Components/SectionHeader";
 
 const integrationsByLevel = {
-  'Business Essentials': [
-    'Google Workspace / Microsoft 365',
-    'Stripe / Razorpay / PayPal',
-    'Zoho Mail / Outlook',
-    'Slack / Microsoft Teams',
+  "Business Essentials": [
+    "Google Workspace / Microsoft 365",
+    "Stripe / Razorpay / PayPal",
+    "Zoho Mail / Outlook",
+    "Slack / Microsoft Teams",
   ],
-  'Growth Stage': [
-    'CRM Integrations: Salesforce, Zoho CRM, HubSpot',
-    'HR & Payroll: GreytHR, Darwinbox, BambooHR',
-    'Marketing Tools: Mailchimp, WhatsApp Business API, Twilio SMS',
-    'ERP/Inventory: Tally, QuickBooks, Odoo ERP',
+  "Growth Stage": [
+    "CRM Integrations: Salesforce, Zoho CRM, HubSpot",
+    "HR & Payroll: GreytHR, Darwinbox, BambooHR",
+    "Marketing Tools: Mailchimp, WhatsApp Business API, Twilio SMS",
+    "ERP/Inventory: Tally, QuickBooks, Odoo ERP",
   ],
-  'Enterprise Level': [
-    'BI & Analytics: Power BI, Tableau, Looker Studio',
-    'Predictive ML Models: Sales forecasting, anomaly detection',
-    'Accounting & POS: SAP, Oracle Netsuite, Zoho Books',
-    'Multi-Location Sync: Cloud POS, Franchise management',
+  "Enterprise Level": [
+    "BI & Analytics: Power BI, Tableau, Looker Studio",
+    "Predictive ML Models: Sales forecasting, anomaly detection",
+    "Accounting & POS: SAP, Oracle Netsuite, Zoho Books",
+    "Multi-Location Sync: Cloud POS, Franchise management",
   ],
-  'Fully Automated AI': [
-    'AI Assistant: Voice + Chat for staff & customer support',
-    'IoT Integrations: Smart sensors, patient vitals, smart devices',
-    'RPA (Robotic Process Automation): Auto data entry, invoice processing',
-    'AI Security & Compliance: Threat detection, GDPR/ISO compliance',
-    'Custom APIs: Real-time integration with any external platform',
+  "Fully Automated AI": [
+    "AI Assistant: Voice + Chat for staff & customer support",
+    "IoT Integrations: Smart sensors, patient vitals, smart devices",
+    "RPA (Robotic Process Automation): Auto data entry, invoice processing",
+    "AI Security & Compliance: Threat detection, GDPR/ISO compliance",
+    "Custom APIs: Real-time integration with any external platform",
   ],
 };
 
-const industries = ['Healthcare', 'Retail', 'Education', 'Finance', 'Technology'];
+const industries = [
+  "Healthcare",
+  "Retail",
+  "Education",
+  "Finance",
+  "Technology",
+];
 
 const CustomPage = () => {
-  const [selectedIndustry, setSelectedIndustry] = useState('');
+  const [selectedIndustry, setSelectedIndustry] = useState("");
   const [selectedIntegrations, setSelectedIntegrations] = useState([]);
   const [userCount, setUserCount] = useState(10);
 
@@ -55,7 +61,8 @@ const CustomPage = () => {
   const calculatePrice = () => {
     const baseIntegrationCost = 1500;
     const perUserCost = 100;
-    const totalIntegrationCost = selectedIntegrations.length * baseIntegrationCost;
+    const totalIntegrationCost =
+      selectedIntegrations.length * baseIntegrationCost;
     const totalUserCost = userCount * perUserCost;
     return totalIntegrationCost + totalUserCost;
   };
@@ -74,11 +81,23 @@ const CustomPage = () => {
           className="custom-form"
         >
           {/* Hidden fields for submission */}
-          <input type="hidden" name="_subject" value="New Custom Integration Proposal" />
+          <input
+            type="hidden"
+            name="_subject"
+            value="New Custom Integration Proposal"
+          />
           <input type="hidden" name="industry" value={selectedIndustry} />
           <input type="hidden" name="user_count" value={userCount} />
-          <input type="hidden" name="integrations" value={selectedIntegrations.join(', ')} />
-          <input type="hidden" name="estimated_price" value={`₹${calculatePrice().toLocaleString()}`} />
+          <input
+            type="hidden"
+            name="integrations"
+            value={selectedIntegrations.join(", ")}
+          />
+          <input
+            type="hidden"
+            name="estimated_price"
+            value={`₹${calculatePrice().toLocaleString()}`}
+          />
 
           {/* Step 1: Industry Selection */}
           <section className="form-section">
@@ -106,24 +125,28 @@ const CustomPage = () => {
           {selectedIndustry && (
             <section className="form-section">
               <h2>Step 2: Choose Your Integrations</h2>
-              {Object.entries(integrationsByLevel).map(([level, integrations]) => (
-                <div key={level} className="integration-category">
-                  <h3>{level}</h3>
-                  <div className="checkbox-grid">
-                    {integrations.map((integration) => (
-                      <label key={integration} className="checkbox-label">
-                        <input
-                          type="checkbox"
-                          value={integration}
-                          checked={selectedIntegrations.includes(integration)}
-                          onChange={() => handleIntegrationChange(integration)}
-                        />
-                        <span>{integration}</span>
-                      </label>
-                    ))}
+              {Object.entries(integrationsByLevel).map(
+                ([level, integrations]) => (
+                  <div key={level} className="integration-category">
+                    <h3>{level}</h3>
+                    <div className="checkbox-grid">
+                      {integrations.map((integration) => (
+                        <label key={integration} className="checkbox-label">
+                          <input
+                            type="checkbox"
+                            value={integration}
+                            checked={selectedIntegrations.includes(integration)}
+                            onChange={() =>
+                              handleIntegrationChange(integration)
+                            }
+                          />
+                          <span>{integration}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                )
+              )}
             </section>
           )}
 
@@ -184,7 +207,9 @@ const CustomPage = () => {
               <h2>Step 5: Estimate Your Pricing</h2>
               <div className="pricing-calculator">
                 <div className="input-group">
-                  <label htmlFor="userCount">Number of Users: {userCount}</label>
+                  <label htmlFor="userCount">
+                    Number of Users: {userCount}
+                  </label>
                   <input
                     type="range"
                     id="userCount"
@@ -198,11 +223,14 @@ const CustomPage = () => {
                 </div>
                 <div className="summary-card">
                   <p className="price-estimate">
-                    <FaMoneyBillWave /> Estimated Monthly Cost:{' '}
+                    <FaMoneyBillWave /> Estimated Monthly Cost:{" "}
                     <strong>₹{calculatePrice().toLocaleString()}</strong>
                   </p>
                   <p>
-                    <strong>Selected Integrations:</strong> {selectedIntegrations.length}
+                    <span className="label-blue">Selected Integrations:</span>{" "}
+                    <span className="count-label">
+                      {selectedIntegrations.length}
+                    </span>
                   </p>
                 </div>
               </div>

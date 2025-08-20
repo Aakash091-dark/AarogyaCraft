@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: var(--neutral-light);
+  background-color: #039bf2;  /* solid, no transparency */
   border-bottom: 1px solid var(--secondary-accent);
   font-family: var(--font-heading);
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -11,6 +11,7 @@
   top: 0;
   z-index: 999;
 }
+
 
 .nav-links {
   display: flex;
@@ -36,8 +37,8 @@
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--primary-color);
+  color: #0b0b0b;
+  border-bottom: 2px solid black;
 }
 
 .dropdown {
@@ -140,19 +141,25 @@
 }
 
 .aarogya-login-button {
-  padding: 10px 25px;
-  background: var(--primary-color);
-  color: var(--neutral-light);
+  background: linear-gradient(135deg, gray, rgb(44, 216, 255));
   border: none;
-  border-radius: var(--border-radius);
-  font-size: 1rem;
+  border-radius: 8px;       
+  padding: 8px 14px;        
+  font-size: 1.1rem;        
+  font-weight: 600;
+  color: black;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease;          
+  min-width: 100px;        
+  position: relative;
+  overflow: hidden;
 }
 
 .aarogya-login-button:hover {
-  background: var(--highlight-color);
-  transform: translateY(-2px);
+background: white;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
 .aarogya-username {

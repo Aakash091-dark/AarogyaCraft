@@ -31,7 +31,7 @@ const Industries = () => {
     { title: "Education", imageUrl: EduImage },
     { title: "Finance", imageUrl: FinanceImage },
   ];
-
+  
   return (
     <div className="industries-section">
       <div className="container">
