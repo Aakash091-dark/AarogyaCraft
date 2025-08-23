@@ -10,6 +10,7 @@ import Terms from "./Pages/Terms";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import CustomPage from "./Pages/CustomPage";
 import PrebuiltPage from "./Pages/prebuiltPage";
+import PaymentPage from "./Pages/PaymentPage";
 function App() {
   return (
     <Router>
@@ -23,6 +24,7 @@ function App() {
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         <Route path="/custom" element={<CustomPage />} />
         <Route path="/prebuilt" element={<PrebuiltPage />} />
+        <Route path="/payment/:amount" element={<PaymentPage />} />
       </Routes>
       <Footer />
     </Router>

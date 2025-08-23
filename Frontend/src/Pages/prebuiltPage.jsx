@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./prebuiltPage.css";
 
 const plans = [
   {
     name: "Basic",
-    price: "₹4,999 / month",
+    price: "4999",
     features: [
       "Up to 5 Users",
       "1–2 Essential Modules",
@@ -18,7 +19,7 @@ const plans = [
   },
   {
     name: "Intermediate",
-    price: "₹9,999 – ₹12,999 / month",
+    price: "9999",
     features: [
       "Up to 20 Users",
       "4–5 Prebuilt Modules",
@@ -32,7 +33,7 @@ const plans = [
   },
   {
     name: "Advanced",
-    price: "₹24,999 – ₹29,999 / month",
+    price: "24999",
     features: [
       "Unlimited Users",
       "All Prebuilt + 1–2 Semi-Custom Modules",
@@ -46,7 +47,7 @@ const plans = [
   },
   {
     name: "Fully Automated",
-    price: "₹75,000 – ₹1,00,000 / month",
+    price: "75000",
     features: [
       "Unlimited Users",
       "Fully Custom AI Modules",
@@ -83,15 +84,15 @@ const PrebuiltPage = () => {
                 <span className="popular-badge">⭐ Most Popular</span>
               )}
               <h3 className="plan-title">{plan.name}</h3>
-              <p className="plan-price">{plan.price}</p>
+              <p className="plan-price">₹{plan.price} / month</p>
               <ul className="feature-list">
                 {plan.features.map((feature, i) => (
                   <li key={i}>{feature}</li>
                 ))}
               </ul>
-              <button className="cta-btn">
+              <Link to={`/payment/${plan.price}`} className="cta-btn">
                 {plan.highlight ? "Start with Intermediate" : "Get Started"}
-              </button>
+              </Link>
             </div>
           ))}
         </div>
