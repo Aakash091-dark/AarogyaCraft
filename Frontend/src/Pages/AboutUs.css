@@ -14,14 +14,14 @@
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 15px;
-  color: black;
+  color: var(--secondary-color);
   transition: color 0.3s ease;
 }
 
 .about-content p {
   font-size: 1.2rem;
   line-height: 1.7;
-  color: rgb(47, 46, 46);
+  color: var(--secondary-color);
   max-width: 800px;
   margin: 0 auto;
   transition: color 0.3s ease;
@@ -53,7 +53,7 @@
   background: var(--primary-color);
   border-radius: 20px;
   padding: 40px 25px;
-  border: 1px solid black;
+  border: 1px solid var(--secondary-color);
   backdrop-filter: blur(15px);
   transition: all 0.4s ease;
   position: relative;
@@ -68,14 +68,14 @@
 .vision-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 0 25px rgba(0,0,0,0.15);
-  color: black; /* text turns black on hover like pricing cards */
+  color: var(--secondary-color); /* text turns black on hover like pricing cards */
 }
 
 .mission-card h3,
 .vision-card h3 {
   font-size: 1.8rem;
   margin-bottom: 15px;
-  color: black;
+  color: var(--neutral-light);
   transition: color 0.3s ease;
 }
 
@@ -94,7 +94,7 @@
 
 .mission-card:hover p,
 .vision-card:hover p {
-  color: black;
+  color: var(--neutral-light);
 }
 
 /* Why Choose Us Section - 3D Box Wrapper */
@@ -115,7 +115,7 @@
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 50px;
-  color: black;
+  color: var(--secondary-color);
   transition: color 0.3s ease;
 }
 
@@ -149,13 +149,13 @@
 .reason-card:hover {
   transform: translateY(15px) scale(1.05);
   box-shadow: 0 25px 50px rgba(0,0,0,0.25);
-  color: black;
+  color: var(--secondary-color);
 }
 
 .reason-card h4 {
   font-size: 1.4rem;
   margin-bottom: 12px;
-  color: black;
+  color: var(--neutral-light);
   transition: color 0.3s ease;
 }
 
@@ -171,7 +171,7 @@
 }
 
 .reason-card:hover p {
-  color: black;
+  color: var(--neutral-light);
 }
 
 /* Responsive */

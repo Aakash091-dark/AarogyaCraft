@@ -1,7 +1,7 @@
 .hero-container {
-  background: linear-gradient(135deg, #d5ecff, #d5ecff);
+  background-color: var(--background-color);
   padding: 10rem 2rem;
-  color: #ffffff; /* Fallback text color */
+  color: var(--secondary-color); /* Fallback text color */
 }
 
 .hero-content {

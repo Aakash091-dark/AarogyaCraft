@@ -1,7 +1,7 @@
 .services-section {
   padding: 80px 20px;
   background: var(--background-color);
-  color: black;
+  color: var(--secondary-color);
   text-align: center;
   font-family: "Inter", sans-serif;
 }
@@ -10,20 +10,21 @@
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 10px;
-  color: #029aff !important;
+  color: #000 !important; /* fixed */
 }
 
 .section-subtitle {
   font-size: 1.2rem;
-  color: #000000 !important; 
+  color: #000 !important; /* fixed */
   font-weight: 600;
-  font-size: x-large !important;
+  font-size: x-large;
   margin-bottom: 60px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
 }
+
 
 /* Wrapper with 2 cards per row */
 .services-wrapper {

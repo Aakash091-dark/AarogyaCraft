@@ -1,18 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Hero from "./Hero";
 import Industries from "./Industries";
+import AnimatedText from "./AnimatedText";
 import "./LandingPage.css";
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
-      <Hero />
+      <AnimatedText />
       <main className="container">
-        <section className="solutions-overview">
-          <h2>Tailored Management Systems for Every Industry</h2>
-        </section>
-
+        {/* Features Section */}
         <section className="features-grid">
           <div className="feature-card">
             <h3>Custom Solutions</h3>
@@ -26,6 +23,7 @@ const LandingPage = () => {
               <li>Enhanced Productivity</li>
             </ul>
           </div>
+
           <div className="feature-card">
             <h3>Pre-built Solutions</h3>
             <p>
@@ -40,6 +38,7 @@ const LandingPage = () => {
           </div>
         </section>
 
+        {/* Call to Action Section */}
         <section className="cta-section">
           <h2>Ready to Get Started?</h2>
           <p className="cta-text">
@@ -55,6 +54,7 @@ const LandingPage = () => {
           </div>
         </section>
       </main>
+
       <Industries />
     </div>
   );

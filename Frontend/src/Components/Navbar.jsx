@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Auth from "./Auth";
-import Logo from "./Logo";
 import { Account, Client } from "appwrite";
 
 const client = new Client()
@@ -51,7 +50,11 @@ const Navbar = () => {
   return (
     <>
       <nav className={`navbar ${showAuthForm ? "blurred" : ""}`}>
-        <Logo />
+        <div className="navbar-brand">
+          <Link to="/" className="navbar-title">
+            AAROGYA CRAFT
+          </Link>
+        </div>
 
         <div className="hamburger" onClick={toggleMenu}>
           ☰

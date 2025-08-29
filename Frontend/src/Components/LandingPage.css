@@ -38,7 +38,7 @@
   box-shadow: var(--box-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
-  border: 1px solid var(--secondary-accent);
+  border: 2px solid #333;
 }
 
 .feature-card:hover {
@@ -86,7 +86,7 @@ transform: rotateX(0deg) rotateY(0deg) scale(1.02);
   background-color: var(--neutral-light);
   border-radius: 25px;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2); /* always lifted 3D */
-  border: 1px solid var(--secondary-accent);
+  border: 2px solid #333;
   transform-style: preserve-3d; /* 3D effect */
   perspective: 1200px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -105,11 +105,11 @@ transform: rotateX(0deg) rotateY(0deg) scale(1.02);
 .cta-section h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
-  color: black;
+  color: var(--secondary-color);
 }
 
 .cta-section .cta-text {
-  color: black;
+  color: var(--secondary-color);
   font-size: 1.1rem;
   margin-bottom: 2rem;
 }
@@ -123,13 +123,13 @@ transform: rotateX(0deg) rotateY(0deg) scale(1.02);
 
 .first-btn,
 .second-btn {
-  background: linear-gradient(135deg, gray, rgb(44, 216, 255));
+  background: var(--accent-color);
   border: none;
   border-radius: 8px;       
   padding: 8px 14px;        
   font-size: 1.1rem;        
   font-weight: 600;
-  color: black;
+  color: var(--neutral-light);
   cursor: pointer;
   transition: all 0.3s ease;
   width: 200px;    
@@ -141,8 +141,8 @@ transform: rotateX(0deg) rotateY(0deg) scale(1.02);
 
 .first-btn:hover,
 .second-btn:hover {
-  background: white;
-  color: black;
+  background: var(--neutral-light);
+  color: var(--secondary-color);
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }

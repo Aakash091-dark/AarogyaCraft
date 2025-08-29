@@ -65,7 +65,7 @@
 }
 
 .password-error {
-  color: red;
+  color: var(--accent-color);
   font-size: 0.9rem;
   margin-top: -10px;
   margin-bottom: 10px;

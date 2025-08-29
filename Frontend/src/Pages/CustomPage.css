@@ -2,7 +2,7 @@
   background: linear-gradient(135deg, var(--background-color), var(--background-color));
   padding: 4rem 1rem;
   font-family: 'Poppins', sans-serif;
-  color: black;
+  color: var(--secondary-color);
 }
 
 .custom-page h1 {
@@ -10,10 +10,11 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
   text-align: center;
+  color: var(--secondary-color);
 }
 
 .custom-page .subtitle {
-  color: black !important;
+  color: var(--secondary-color) !important;
 }
 
 .custom-form {
@@ -42,7 +43,7 @@
   font-size: var(--font-size-title);
   font-weight: 600;
   margin-bottom: 2rem;
-  color: black;
+  color: var(--neutral-light);
   text-align: center;
   line-height: 1.2;
 }
@@ -58,7 +59,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: black;
+  color: var(--neutral-light);
 }
 
 .industry-dropdown,
@@ -70,7 +71,7 @@
   border: 1px solid var(--neutral-medium);
   border-radius: 8px;
   background-color: var(--background-color);
-  color: black;
+  color: var(--secondary-color);
   transition: all 0.3s ease;
 }
 
@@ -84,7 +85,7 @@
 
 /* === Business Details Cards Styling === */
 .input-grid .input-group {
-  background-color: #f9f9f9; /* light card background */
+  background-color: var(--neutral-light); /* light card background */
   padding: 1.5rem;
   border-radius: 12px;
   border: 1px solid var(--neutral-medium);
@@ -104,7 +105,7 @@
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
-  color: #1E3A8A; /* Blue label for icons */
+  color: var(--primary-color); /* Blue label for icons */
 }
 
 .input-grid .input-group textarea {
@@ -114,7 +115,7 @@
   border-radius: 8px;
   box-sizing: border-box;
   border: 1px solid var(--neutral-medium);
-  background-color: #ffffff; 
+  background-color: var(--neutral-light); 
   resize: vertical;
   min-height: 150px;
   transition: all 0.3s ease;
@@ -122,8 +123,8 @@
 
 .input-grid .input-group textarea:focus {
   outline: none;
-  border-color: #0897da; 
-  box-shadow: 0 0 10px rgba(8, 151, 218, 0.2);
+  border-color: var(--highlight-color); 
+  box-shadow: 0 0 10px var(--highlight-color);
 }
 
 .input-grid {
@@ -145,10 +146,10 @@
 .integration-category h3 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #1E3A8A; 
+  color: var(--primary-color); 
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
-  border-bottom: 2px solid #1E3A8A;
+  border-bottom: 2px solid var(--primary-color);
 }
 
 .checkbox-grid {
@@ -168,17 +169,17 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  color: #1E3A8A; /* Blue text */
+  color: var(--primary-color); /* Blue text */
 }
 
 .checkbox-label:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  border-color: rgb(0, 195, 255);
+  border-color: var(--highlight-color);
 }
 
 .checkbox-label input[type='checkbox']:checked + span {
-  color: black;
+  color: var(--secondary-color);
   font-weight: 600;
 }
 
@@ -238,7 +239,7 @@
 .summary-card .price-estimate {
   font-size: 1.4rem;
   font-weight: 700;
-  color: black;
+  color: var(--secondary-color);
 }
 
 .cta-section {
@@ -246,12 +247,12 @@
 }
 
 .label-blue {
-  color: #0897da; 
+  color: var(--highlight-color); 
   font-weight: 600; 
 }
 
 .count-label{
-  color: #0897da;
+  color: var(--highlight-color);
   font-weight: 600;
 }
 
@@ -272,8 +273,8 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, gray,rgb(44, 216, 255));
-  color: black;
+  background: var(--accent-color);
+  color: var(--neutral-light);
   padding: 16px 32px;
   font-size: 1.2rem;
   font-weight: 600;

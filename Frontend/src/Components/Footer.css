@@ -60,8 +60,8 @@
 
 .footer-links a:hover,
 .footer-legal a:hover {
-  color: black;
-  border-bottom: 2px solid black;
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
 }
 
 .social-icons {
@@ -76,7 +76,7 @@
 }
 
 .social-icons a:hover {
-  color: black; 
+  color: var(--secondary-color); 
   transform: translateY(-6px);
 }
 

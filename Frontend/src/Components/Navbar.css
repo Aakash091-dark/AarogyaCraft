@@ -3,13 +3,25 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: #039bf2;  /* solid, no transparency */
+  background-color: var(--primary-color);  /* solid, no transparency */
   border-bottom: 1px solid var(--secondary-accent);
   font-family: var(--font-heading);
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
   z-index: 999;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--neutral-light);
+  text-decoration: none;
 }
 
 
@@ -29,7 +41,7 @@
 
 .nav-links a {
   text-decoration: none;
-  color: var(--secondary-color);
+  color: var(--neutral-light);
   transition: color 0.3s ease;
   padding-bottom: 5px;
   border-bottom: 2px solid transparent;
@@ -37,8 +49,8 @@
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: #0b0b0b;
-  border-bottom: 2px solid black;
+  color: var(--neutral-light);
+  border-bottom: 2px solid var(--accent-color);
 }
 
 .dropdown {
@@ -46,7 +58,7 @@
 }
 
 .exper {
-  color: var(--secondary-color);
+  color: var(--neutral-light);
   display: flex;
   align-items: center;
   gap: 5px;
@@ -141,13 +153,13 @@
 }
 
 .aarogya-login-button {
-  background: linear-gradient(135deg, gray, rgb(44, 216, 255));
+  background: var(--accent-color);
   border: none;
   border-radius: 8px;       
   padding: 8px 14px;        
   font-size: 1.1rem;        
   font-weight: 600;
-  color: black;
+  color: var(--neutral-light);
   cursor: pointer;
   transition: all 0.3s ease;          
   min-width: 100px;        
@@ -156,15 +168,15 @@
 }
 
 .aarogya-login-button:hover {
-background: white;
-  color: black;
+background: var(--neutral-light);
+  color: var(--secondary-color);
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
 .aarogya-username {
   font-size: 1rem;
-  color: var(--secondary-color);
+  color: var(--neutral-light);
   cursor: pointer;
   position: relative;
   font-weight: 500;

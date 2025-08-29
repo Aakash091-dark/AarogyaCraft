@@ -8,7 +8,7 @@
 .heading{
   max-width: 1100px;
   margin: 0 auto 40px auto;
-  background: rgba(39, 178, 193, 0.1); 
+  background: var(--secondary-accent); 
   backdrop-filter: blur(15px);
   border-radius: 25px;
   border: 1px solid var(--secondary-accent);
@@ -21,7 +21,7 @@
 .term-card {
   max-width: 1100px;
   margin: 0 auto 40px auto;
-  background: rgba(39, 178, 193, 0.1); 
+  background: var(--secondary-accent); 
   backdrop-filter: blur(15px);
   border-radius: 25px;
   border: 1px solid var(--secondary-accent);
@@ -45,13 +45,13 @@
 .policy-header h1 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: black;
+  color: var(--secondary-color);
   transition: color 0.3s ease;
 }
 
 .policy-header p {
   font-size: 1.2rem;
-  color: rgb(47,46,46);
+  color: var(--secondary-color);
   transition: color 0.3s ease;
 }
 
@@ -60,7 +60,7 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: rgb(17, 16, 16) !important;
+  color: var(--secondary-color) !important;
   transition: color 0.3s ease;
   text-decoration: underline;  
   text-underline-offset: 4px;
@@ -71,7 +71,7 @@
 .term-card p {
   font-size: 1.2rem;
   line-height: 1.7;
-  color: rgb(9, 9, 9) !important;
+  color: var(--secondary-color) !important;
   max-width: 800px;
   margin-bottom: 20px;
   transition: color 0.3s ease;
@@ -87,7 +87,7 @@
 .term-card ul li {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: rgb(47,46,46);
+  color: var(--secondary-color);
   margin-bottom: 10px;
   transition: color 0.3s ease;
 }

@@ -15,21 +15,9 @@
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--primary-color);
-  margin-bottom: 10px;
-}
-
-.section-subtitle {
-  font-size: 1.2rem;
-  color: var(--primary-color);
-}
 .pricing-section {
   padding: 80px 20px;
-  background: var(--background-color);
-  color: var(--primary-color);
+  background: var(--neutral-light); /* keep dark background */
   text-align: center;
   font-family: "Inter", sans-serif;
 }
@@ -38,21 +26,21 @@
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 10px;
-  color: var(--primary-color);
+  color: var(--neutral-light) !important; /* force white */
 }
 
 .section-subtitle {
   font-size: 1.2rem;
-  color: var(--primary-color);
   margin-bottom: 60px;
+  color: var(--neutral-light) !important; /* force white */
 }
 
 /* Wrapper Card for all pricing cards */
 .pricing-card-wrapper {
-  background: #27b2c11a; 
+  background: var(--secondary-accent); 
   backdrop-filter: blur(20px);
   border-radius: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--secondary-accent);
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   padding: 30px;
   max-width: 1000px;
@@ -90,14 +78,14 @@
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
-  border: 1px solid black;
+  border: 1px solid var(--secondary-color);
   
 }
 
 .pricing-card:hover {
   transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 0 25px rgba(229, 225, 225, 0.5);
-  color: black !important;
+  box-shadow: 0 0 25px var(--secondary-accent);
+  color: var(--secondary-color) !important;
 }
 
 /* Highlighted Card */
@@ -107,7 +95,7 @@
 } */
 
 .pricing-card:hover .feature-list li {
-  color: black;
+  color: var(--secondary-color);
 }
 
 .pricing-card:hover .feature-list li::before {
@@ -131,6 +119,7 @@
   font-size: 1.6rem;
   margin-bottom: 10px;
   font-weight: 700;
+  color: var(--neutral-light);
 }
 
 .plan-price {
@@ -166,19 +155,19 @@
 
 /* Button */
 .cta-btn {
-  background: linear-gradient(135deg, gray, rgb(44, 216, 255));
+  background: var(--accent-color);
   border: none;
   border-radius: 12px;
   padding: 12px 20px;
   font-size: 1rem;
   font-weight: 600;
-  color: black;
+  color: var(--neutral-light);
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
 }
 
 .cta-btn:hover {
-  background: rgb(255, 252, 252);
+  background: var(--neutral-light);
   transform: scale(1.05);
 }
